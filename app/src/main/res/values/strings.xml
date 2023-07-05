@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AbschlussAufgabe</string>
+    <string name="represents_the_backicon">Represents the BackIcon</string>
+    <string name="represents_the_filtericon">Represents the filtericon</string>
+    <string name="represents_the_searchicon">Represents the Searchicon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
