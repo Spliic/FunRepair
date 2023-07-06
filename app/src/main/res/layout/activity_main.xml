@@ -331,17 +331,23 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
-            android:name="com.example.abschlussaufgabe.ui.LoginFragment"
+            android:id="@+id/fragmentContainerView3"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="80dp"
             android:layout_marginBottom="80dp"
+            app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@+id/cvNavibar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvToolbar"
-            tools:layout="@layout/fragment_login"/>
+            app:navGraph="@navigation/nav_graph"
+            />
+
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

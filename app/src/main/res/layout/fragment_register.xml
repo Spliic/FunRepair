@@ -1,73 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.RegisterFragment"
+    android:background="@color/appcolor">
 
-    <data>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo24" />
 
-    </data>
-
-    <FrameLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.RegisterFragment"
-        android:background="@color/appcolor">
+        android:gravity="center"
+        android:orientation="vertical">
 
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="10dp"
+            android:text="Registrieren"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp"
-                android:text="Registrieren"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp">
+                android:hint="E-mail" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="E-mail" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiPasswort"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp">
+                android:inputType="textPassword"
+                android:hint="Passwort" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Passwort" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <Button
-                android:layout_marginTop="50dp"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:backgroundTint="#3100626A"
-                android:textColor="@color/black"
-                android:text="Registrieren"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:layout_marginEnd="10dp"
+            android:text="Registrieren"
+            android:textSize="10dp" />
 
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize="20dp"
+            android:backgroundTint="@color/colourButton"
+            android:textColor="@color/white"
+            android:text="Registrieren"/>
 
 
-    </FrameLayout>
-</layout>
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>
