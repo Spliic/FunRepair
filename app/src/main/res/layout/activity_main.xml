@@ -10,12 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/appcolor"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+            android:id="@+id/cvToolbar"
             android:backgroundTint="@color/appcolor"
             android:layout_width="match_parent"
             android:layout_height="80dp"
@@ -47,11 +47,11 @@
                     android:gravity="center"
                     android:textSize="25sp"
                     android:textStyle="bold"
+                    android:text="Werkzeug"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Werkzeug" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <ImageView
                     android:id="@+id/ivFilterIcon"
@@ -82,20 +82,28 @@
 
         </androidx.cardview.widget.CardView>
 
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
+            android:name="com.example.abschlussaufgabe.ui.LoginFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="80dp"
             android:layout_marginBottom="80dp"
-            android:name="com.example.abschlussaufgabe.ui.LoginFragment"
-            tools:layout="@layout/fragment_login"/>
+            android:layout_marginTop="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cvNavibar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvToolbar"
+            tools:layout="@layout/fragment_login" />
+
+
+
 
         <androidx.cardview.widget.CardView
-            android:backgroundTint="@color/appcolor"
-            android:id="@+id/cardView2"
+            android:id="@+id/cvNavibar"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:backgroundTint="@color/appcolor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -108,10 +116,10 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:backgroundTint="@color/appcolor"
                     android:id="@+id/cardViewHome"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:backgroundTint="@color/appcolor"
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cardViewWerkzeug"
@@ -138,7 +146,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-10dp"
-                            android:text="Home"
+                            android:text="@string/home"
                             android:textSize="9sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/ivHome"
@@ -152,10 +160,10 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:backgroundTint="@color/appcolor"
                     android:id="@+id/cardViewWerkzeug"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:backgroundTint="@color/appcolor"
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cardViewErsatzteile"
@@ -182,7 +190,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-10dp"
-                            android:text="Werkzeug"
+                            android:text="@string/werkzeug"
                             android:textSize="9sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/ivWerkzeug"
@@ -196,10 +204,10 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:backgroundTint="@color/appcolor"
                     android:id="@+id/cardViewErsatzteile"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:backgroundTint="@color/appcolor"
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cardViewAnleitung"
@@ -226,7 +234,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-10dp"
-                            android:text="Ersatzteile"
+                            android:text="@string/ersatzteile"
                             android:textSize="9sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/ivErsatzteile"
@@ -240,10 +248,10 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:backgroundTint="@color/appcolor"
                     android:id="@+id/cardViewAnleitung"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:backgroundTint="@color/appcolor"
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cardViewWerkstatt"
@@ -270,7 +278,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-10dp"
-                            android:text="Anleitung"
+                            android:text="@string/anleitung"
                             android:textSize="9sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/ivAnleitung"
@@ -284,10 +292,10 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:backgroundTint="@color/appcolor"
                     android:id="@+id/cardViewWerkstatt"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:backgroundTint="@color/appcolor"
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -314,7 +322,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-10dp"
-                            android:text="Werkstatt"
+                            android:text="@string/werkstatt"
                             android:textSize="9sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/ivWerkstatt"

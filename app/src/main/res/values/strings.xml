@@ -5,4 +5,9 @@
     <string name="represents_the_searchicon">Represents the Searchicon</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="werkzeug">Werkzeug</string>
+    <string name="ersatzteile">Ersatzteile</string>
+    <string name="anleitung">Anleitung</string>
+    <string name="werkstatt">Werkstatt</string>
 </resources>
