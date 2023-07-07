@@ -5,56 +5,97 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.example.abschlussaufgabe.databinding.FragmentRegisterBinding
+import com.example.abschlussaufgabe.model.MainViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 /**
- * A simple [Fragment] subclass.
- * Use the [RegisterFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Das Register Fragment Händelt das Register UI und die Logik von dem Registrieren mit Firebase
  */
 class RegisterFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val viewModel:MainViewModel by activityViewModels()
 
+    private lateinit var binding: FragmentRegisterBinding
+
+    private lateinit var auth: FirebaseAuth
+
+    /**
+     * die OnCreateView zeigt das UI Element an
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        binding = FragmentRegisterBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
-    companion object {
+    /**
+     * Die OnStart Funktion erstellt eine Firebase Instanz
+     */
+    override fun onStart() {
+        super.onStart()
+        auth = Firebase.auth
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterFragment.
+         * Hier Setzten wir ein ClickListener und speichern uns den eingegebenen
+         * Text ab
          */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegisterFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+        binding.btnRegister.setOnClickListener {
+            val email = binding.tiEmail.text.toString()
+            val passwort = binding.tiPasswort.text.toString()
+            register(email,passwort)
+        }
+    }
+
+    /**
+     *  Hier überprüfen wir ob die Email und das Passwort felder Leer sind
+     *  Sind sie leer geben wir ein Toast aus.
+     */
+    private fun register(email: String, passwort: String) {
+        if (email.isEmpty()){
+            Toast.makeText(this.context,"Bitte geben sie eine Email Adresse an", Toast.LENGTH_LONG).show()
+        }
+
+        if (passwort.isEmpty()){
+            Toast.makeText(this.context,"Bitte geben Sie ein Passwort ein", Toast.LENGTH_LONG).show()
+        }
+
+        /**
+         * Die Firebase funtkion zum Registrieren vom User
+         */
+        auth.createUserWithEmailAndPassword(email,passwort)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+
+                    /**
+                     * Ist das Registrieren  erfolgreich gewesen , UI wird geupdated mit dem Infos vom Users
+                     * Anschließend kommt ein Toast mit erfolgreich Registriert
+                     */
+                    // TODO Überprüfung ob die Konstante genutzt werden muss
+                    val user = auth.currentUser
+                    findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
+                    Toast.makeText(this.context,"Sie haben sich erfolgreich Registriert", Toast.LENGTH_LONG).show()
+                } else {
+
+                    /**
+                     * Hat es nicht geklappt, wird ein Toast angezeigt das zugangsdaten nicht richtig sind.
+                     */
+                    Toast.makeText(this.context,"Sie konnten nicht Registriert werden.", Toast.LENGTH_LONG).show()
                 }
             }
     }
+
+
 }

@@ -5,56 +5,123 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.abschlussaufgabe.MainActivity
 import com.example.abschlussaufgabe.R
+import com.example.abschlussaufgabe.databinding.FragmentLoginBinding
+import com.example.abschlussaufgabe.model.MainViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+    /**
+     * Das Login Fragment Händelt das Login UI und die Logik von dem Einloggen mit Firebase
+    */
+
 class LoginFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private val viewModel: MainViewModel by activityViewModels()
+
+    private lateinit var binding: FragmentLoginBinding
+
+    private lateinit var auth: FirebaseAuth
+
+
+    /**
+     * Die OnStart Funktion überprüft ob User aktuell eingeloggt ist.
+     * Wenn der User eingeloggt ist wird direkt zum HomeFragment Navigiert
+     */
+    override fun onStart() {
+        super.onStart()
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
         }
     }
 
-    override fun onCreateView(
+        /**
+         * die OnCreateView zeigt das UI Element an
+         */
+        override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        /**
+         * Hier Setzten wir ein ClickListener und speichern uns den eingegebenen
+         * Text ab
+         */
+        binding.btnEinloggen.setOnClickListener {
+            val email = binding.tiEmail.text.toString()
+            val passwort = binding.tiPasswort.text.toString()
+            login(email,passwort)
+        }
+
+        /**
+         * Hier Navigieren wir vom LoginFragment zum RegisterFragment
+         * wenn man auf dem Text Unterm Einlogg Button klickt.
+         */
+        binding.tvRegisterInLoginScreen.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment2())
+        }
+    }
+
+        /**
+         *  Hier überprüfen wir ob die Email und das Passwort felder Leer sind
+         *  Sind sie leer geben wir ein Toast aus.
+         */
+    private fun login ( email:String , passwort: String) {
+            if (email.isEmpty()) {
+                Toast.makeText(
+                    this.context,
+                    "Bitte geben Sie eine Email Adresse an ",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
+            if (passwort.isEmpty()) {
+                Toast.makeText(this.context, "Bitte geben Sie ein Passwort ein", Toast.LENGTH_LONG)
+                    .show()
+            }
+
+
+            /**
+             * Firebase Funktion um den User einzuloggen
+             */
+            auth.signInWithEmailAndPassword(email, passwort)
+                .addOnCompleteListener(requireActivity()) { task ->
+                    if (task.isSuccessful) {
+                        /**
+                         * Ist das Einloggen erfolgreich gewesen , UI wird geupdated mit dem Infos vom Users
+                         */
+                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+                        val user = auth.currentUser
+                    } else {
+                        /**
+                         * Hat es nicht geklappt, wird ein Toast angezeigt das zugangsdaten nicht richtig sind.
+                         */
+                        Toast.makeText(
+                            this.context,
+                            "Ihre Zugangsdaten sind nicht richtig.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+        }
 }
