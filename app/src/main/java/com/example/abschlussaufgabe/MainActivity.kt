@@ -1,21 +1,22 @@
 package com.example.abschlussaufgabe
 
-import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.abschlussaufgabe.databinding.ActivityMainBinding
 import com.example.abschlussaufgabe.model.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
+    private val viewModel: MainViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var viewModel = MainViewModel(Application())
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(
             this,
             R.layout.activity_main
@@ -35,12 +36,31 @@ class MainActivity : AppCompatActivity() {
         /**
          *  Hier Observen wir vom Viewmodel und setzten die Sichtbarkeit und die Magins des Fragments.
          */
-        viewModel.hideToolbarAndNavigation.observeForever {
+        viewModel.hideToolbar.observeForever {
             if (it == false) {
                 binding.cvToolbar.visibility = View.VISIBLE
-                binding.cvNavibar.visibility = View.VISIBLE
-                fragmentParams.setMargins(0,80,0,80)
+                setFragmentMargins(fragmentParams)
+
+
             }
+        }
+
+        viewModel.hideNavigation.observeForever {
+            if (it == false) {
+                binding.cvNavibar.visibility = View.VISIBLE
+                setFragmentMargins(fragmentParams)
+
+            }
+        }
+
+    }
+
+
+    private fun setFragmentMargins(fragmentParams: ViewGroup.MarginLayoutParams){
+        if (viewModel.hideToolbar.value == true && viewModel.hideNavigation.value == false){
+            fragmentParams.setMargins(0,0,0,80)
+        } else {
+            fragmentParams.setMargins(0,80,0,80)
         }
     }
 
