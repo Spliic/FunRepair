@@ -45,22 +45,22 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
+                app:endIconMode="clear_text"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiEmail"
                     android:layout_width="match_parent"
-                    android:background="@color/white"
                     android:layout_height="50dp"
                     android:hint="E-mail" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -70,7 +70,6 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiPasswort"
                     android:layout_width="match_parent"
-                    android:background="@color/white"
                     android:layout_height="50dp"
                     android:inputType="textPassword"
                     android:hint="Passwort" />
@@ -93,14 +92,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="50dp"
-                android:text="Du hast bereits einene Account? Klicke hier!"
+                android:text="@string/du_hast_bereits_einene_account_klicke_hier"
                 android:textSize="12sp"
                 android:textColor="@color/colourButton"
-                android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
 

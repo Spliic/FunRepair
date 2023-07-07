@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.databinding.FragmentHomeBinding
 import com.example.abschlussaufgabe.model.MainViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels()
-
     private lateinit var binding: FragmentHomeBinding
 
 
@@ -22,6 +24,10 @@ class HomeFragment : Fragment() {
 
     }
 
+
+    /**
+     * die OnCreateView zeigt das UI Element an
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +39,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        /*binding.btnLogout.setOnClickListener {
+            Firebase.auth.signOut()
+        }
+
+         */
+
     }
 
 

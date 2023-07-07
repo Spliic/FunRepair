@@ -37,7 +37,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp">
@@ -46,13 +46,12 @@
                     android:id="@+id/tiEmail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@color/white"
                     android:hint="E-mail" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -63,7 +62,6 @@
                     android:id="@+id/tiPasswort"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@color/white"
                     android:hint="Passwort"
                     android:imeOptions="actionNext"
                     android:inputType="textPassword" />
@@ -96,13 +94,12 @@
 
             <TextView
                 android:id="@+id/tvRegisterInLoginScreen"
-                android:layout_width="wrap_content"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="50dp"
-                android:text="Du hast noch kein Account? Klicke Hier"
+                android:text="@string/registeryou"
                 android:textColor="@color/colourButton"
                 android:textSize="12sp" />
 

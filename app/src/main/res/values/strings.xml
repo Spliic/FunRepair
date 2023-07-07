@@ -10,4 +10,6 @@
     <string name="ersatzteile">Ersatzteile</string>
     <string name="anleitung">Anleitung</string>
     <string name="werkstatt">Werkstatt</string>
+    <string name="registeryou">Du hast noch kein Account? Registrier dich \n<b><u>hier!</u></b></string>
+    <string name="du_hast_bereits_einene_account_klicke_hier">Du hast bereits einen Account? \nKlicke <b><u>hier!</u></b></string>
 </resources>
