@@ -39,11 +39,13 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*binding.btnLogout.setOnClickListener {
+
+        binding.btnLogout.setOnClickListener {
             Firebase.auth.signOut()
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
         }
 
-         */
+
 
     }
 

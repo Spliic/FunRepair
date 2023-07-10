@@ -23,6 +23,16 @@
             android:layout_marginBottom="50dp">
 
 
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Logout test"
+                app:layout_constraintBottom_toTopOf="@+id/rv_Newitem"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"

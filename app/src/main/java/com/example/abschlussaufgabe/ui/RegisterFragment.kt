@@ -57,6 +57,10 @@ class RegisterFragment : Fragment() {
             val passwort = binding.tiPasswort.text.toString()
             register(email,passwort)
         }
+
+        binding.duhasteinacc.setOnClickListener {
+            findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
+        }
     }
 
     /**
