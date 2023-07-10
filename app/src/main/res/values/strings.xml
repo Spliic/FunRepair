@@ -12,4 +12,9 @@
     <string name="werkstatt">Werkstatt</string>
     <string name="registeryou">Du hast noch kein Account? Registrier dich \n<b><u>hier!</u></b></string>
     <string name="du_hast_bereits_einene_account_klicke_hier">Du hast bereits einen Account? \nKlicke <b><u>hier!</u></b></string>
+
+    <string name="kit1">Pro Tech Toolkit</string>
+    <string name="kitprice1">74,99€</string>
+    <string name="kitdescription1">Wegwerfprodukte ade. Teure Hightech-Geräte, die bereits nach ein paar Monaten die ersten Defekte aufweisen, sind frustrierend. Aber was tun, wenn es mal wieder so weit ist und die ersten Schäden deinen Alltag durcheinander bringen? Repariere sie selbst.
+    In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphone, Spielekonsole oder Wearables brauchst.</string>
 </resources>

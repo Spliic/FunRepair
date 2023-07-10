@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.hideToolbar.observeForever {
             if (it == false) {
                 binding.cvToolbar.visibility = View.VISIBLE
-                setFragmentMargins(fragmentParams)
+                //setFragmentMargins(fragmentParams)
 
 
             }
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.hideNavigation.observeForever {
             if (it == false) {
                 binding.bottomNavigation.visibility = View.VISIBLE
-                setFragmentMargins(fragmentParams)
+                //setFragmentMargins(fragmentParams)
 
             }
         }
