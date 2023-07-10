@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/NavHome"
+        android:enabled="true"
+        android:icon="@drawable/homeicon"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/NavSuche"
+        android:enabled="true"
+        android:icon="@drawable/searchicon"
+        android:title="Suche"/>
+
+    <item
+        android:id="@+id/NavWarenkorb"
+        android:enabled="true"
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:title="Warenkorb"/>
+
+    <item
+        android:id="@+id/NavPerson"
+        android:enabled="true"
+        android:icon="@drawable/baseline_person_24"
+        android:title="Profil"/>
+
+    <item
+        android:id="@+id/NavWerkstatt"
+        android:enabled="true"
+        android:icon="@drawable/werkstatt"
+        android:title="Werkstatt"/>
+</menu>

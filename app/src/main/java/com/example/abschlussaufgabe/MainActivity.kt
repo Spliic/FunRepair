@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
          * Hier entfernen wir die Sichtbarkeit von der Toolbar und Navibar
          */
         binding.cvToolbar.visibility = View.GONE
-        binding.cvNavibar.visibility = View.GONE
+        binding.bottomNavigation.visibility = View.GONE
         val fragmentParams = binding.fragmentContainerView3.layoutParams as ViewGroup.MarginLayoutParams
 
         /**
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.hideNavigation.observeForever {
             if (it == false) {
-                binding.cvNavibar.visibility = View.VISIBLE
+                binding.bottomNavigation.visibility = View.VISIBLE
                 setFragmentMargins(fragmentParams)
 
             }

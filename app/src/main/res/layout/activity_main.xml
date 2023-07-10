@@ -84,252 +84,6 @@
 
 
 
-
-
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvNavibar"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:backgroundTint="@color/appcolor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
-
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardViewHome"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:backgroundTint="@color/appcolor"
-                    app:cardCornerRadius="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/cardViewWerkzeug"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <ImageView
-                            android:id="@+id/ivHome"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="15dp"
-                            android:src="@drawable/homeicon"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:text="@string/home"
-                            android:textSize="9sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@+id/ivHome"
-                            app:layout_constraintStart_toStartOf="@+id/ivHome"
-                            app:layout_constraintTop_toBottomOf="@+id/ivHome" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardViewWerkzeug"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:backgroundTint="@color/appcolor"
-                    app:cardCornerRadius="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/cardViewErsatzteile"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/cardViewHome"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <ImageView
-                            android:id="@+id/ivWerkzeug"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="15dp"
-                            android:src="@drawable/werkzeug"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:text="@string/werkzeug"
-                            android:textSize="9sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@+id/ivWerkzeug"
-                            app:layout_constraintStart_toStartOf="@+id/ivWerkzeug"
-                            app:layout_constraintTop_toBottomOf="@+id/ivWerkzeug" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardViewErsatzteile"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:backgroundTint="@color/appcolor"
-                    app:cardCornerRadius="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/cardViewAnleitung"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/cardViewWerkzeug"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <ImageView
-                            android:id="@+id/ivErsatzteile"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="15dp"
-                            android:src="@drawable/ersatzteile"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:text="@string/ersatzteile"
-                            android:textSize="9sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@+id/ivErsatzteile"
-                            app:layout_constraintStart_toStartOf="@+id/ivErsatzteile"
-                            app:layout_constraintTop_toBottomOf="@+id/ivErsatzteile" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardViewAnleitung"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:backgroundTint="@color/appcolor"
-                    app:cardCornerRadius="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/cardViewWerkstatt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/cardViewErsatzteile"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <ImageView
-                            android:id="@+id/ivAnleitung"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="15dp"
-                            android:src="@drawable/anleitung"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:text="@string/anleitung"
-                            android:textSize="9sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@+id/ivAnleitung"
-                            app:layout_constraintStart_toStartOf="@+id/ivAnleitung"
-                            app:layout_constraintTop_toBottomOf="@+id/ivAnleitung" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardViewWerkstatt"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:backgroundTint="@color/appcolor"
-                    app:cardCornerRadius="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/cardViewAnleitung"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <ImageView
-                            android:id="@+id/ivWerkstatt"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="15dp"
-                            android:src="@drawable/werkstatt"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:text="@string/werkstatt"
-                            android:textSize="9sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@+id/ivWerkstatt"
-                            app:layout_constraintStart_toStartOf="@+id/ivWerkstatt"
-                            app:layout_constraintTop_toBottomOf="@+id/ivWerkstatt" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView3"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -338,12 +92,32 @@
             android:layout_marginTop="80dp"
             android:layout_marginBottom="80dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toTopOf="@+id/cvNavibar"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvToolbar"
             app:navGraph="@navigation/nav_graph"
             />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/bottom_navigation"
+            android:background="#BECACACA"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appcolor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/botton_navbar" />
 
 
 
