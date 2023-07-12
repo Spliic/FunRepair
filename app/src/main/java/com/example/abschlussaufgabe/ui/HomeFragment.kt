@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.abschlussaufgabe.adapter.WerkzeugAdapter
 import com.example.abschlussaufgabe.databinding.FragmentHomeBinding
-import com.example.abschlussaufgabe.model.MainViewModel
+import com.example.abschlussaufgabe.viewmodel.MainViewModel
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -45,7 +46,20 @@ class HomeFragment : Fragment() {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
         }
 
+        binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.ersatzteilList.value!!)
 
+
+        binding.cvErsatzteile.setOnClickListener {
+            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.ersatzteilList.value!!)
+        }
+
+        binding.cvWerkzeug.setOnClickListener {
+            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.werkzeugList.value!!)
+        }
+
+        binding.cvAnleitung.setOnClickListener {
+            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.anleitungList.value!!)
+        }
 
 
 

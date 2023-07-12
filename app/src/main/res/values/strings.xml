@@ -17,4 +17,59 @@
     <string name="kitprice1">74,99€</string>
     <string name="kitdescription1">Wegwerfprodukte ade. Teure Hightech-Geräte, die bereits nach ein paar Monaten die ersten Defekte aufweisen, sind frustrierend. Aber was tun, wenn es mal wieder so weit ist und die ersten Schäden deinen Alltag durcheinander bringen? Repariere sie selbst.
     In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphone, Spielekonsole oder Wearables brauchst.</string>
+
+    // Strings für das Sortiment WerkzeugeKategorie //
+    <string name="kategorieKits1">Tool Kits</string>
+    <string name="kategoriedescriptionkits1">In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphone, Spielekonsole oder Wearables brauchst.</string>
+
+    <string name="kategorieschraubendreher2">Schraubendreherwerkzeug</string>
+    <string name="kategoriedescriptiondreher2">Ob Hobby-Tüftler:in oder Reparatur-Profi – die FunRepair Schraubendreher und Bit-Sets erfreuen sich großer Beliebtheit, und das nicht ohne Grund: Sie liegen gut in der Hand, erlauben präzises Arbeiten, und wir haben für so ziemlich jeden Schraubenkopf das richtige Bit.</string>
+
+    <string name="kategoriehebel3">Hebelwerkzeug</string>
+    <string name="kategoriedescriptionhebel3">Elektronische Geräte sind empfindlich, und Komponenten wie Displays, Akkus, Motherboards, Kopfhörerstecker oder Thumbsticks sind es erst recht! Mit unseren professionellen Werkzeugen zum Öffnen und Hebeln gelingt es dir, sie sicher auszubauen.</string>
+
+    <string name="kategoriegreifwerkzeug4">Greifwerkzeug</string>
+    <string name="kategoriedescriptiongreif4">Saugheber, Zangen, Grips und andere Werkzeuge sind unerlässlich, um in iPhones und andere elektronische Geräte hineinzukommen, bei denen keine Eingangstür verbaut ist. </string>
+
+    <string name="kategorieesd5">ESD Schutz</string>
+    <string name="kategoriedescriptionschutz5">Arbeitshilfen wie unsere antistatische Arbeitsmatte, antistatische Reinigungspinsel und -bürsten und das FunRepair Anti-Statik-Armband wurden entwickelt, um elektrostatische Entladungen zu verhindern, indem sie ungleiche Spannungen verteilen oder ausgleichen, bevor sie durch empfindliche Elektronik fließen und dort Schäden anrichten können.</string>
+
+    <string name="kategorieschneide6">Schneidewerkzeug</string>
+    <string name="kategoriedescriptionschneide6">Keine Lust, stundenlang nach dem perfekten Tool zu suchen? Wir haben die Recherche für dich übernommen und eine breite Auswahl an hochwertigen Schneidwerkzeugen zusammengestellt. </string>
+
+    // Strings für das Sortiment Werkzeuge Produkte
+
+
+
+
+    // Strings für das Sortiment Ersatzteile //
+
+
+
+    // Kategorie Display
+    <string name="ersatzteildisplay1">iPhone 6s Display(inkl.Kamera &amp; Lautsprecher</string>
+    <string name="ersatzteilpreis1">59,95€</string>
+    <string name="ersatzteildescription1">Bei diesem iPhone 6s Display inklusive Kamera und Lautsprecher sind die kleinen Bauteile bereits vorinstalliert, das spart Zeit und Nerven bei der Reparatur. </string>
+
+
+    <string name="ersatzteildisplay2">iPhone 7 Display(inkl.Kamera &amp; Lautsprecher</string>
+    <string name="ersatzteildisplaypreis2">74,95€</string>
+    <string name="ersatzteildescription2">Die empfindlichste Komponente jedes Smartphones ist das Display. Ein unglücklicher Sturz, eine unbedachte Bewegung und den Screen deines iPhones ziert die berüchtigte Spider-App. </string>
+
+
+    <string name="ersatzteildisplay3">iPhone 8 Display(inkl.Kamera &amp; Lautsprecher</string>
+    <string name="ersatzteildisplaypreis3">79,95€</string>
+    <string name="ersatzteildisplaydescription3">Auf diesem iPhone 8 Display sind alle kleinen Komponenten bereits vorinstalliert - das spart Zeit und Nerven bei der Reparatur. </string>
+
+
+    <string name="ersatzteildisplay4">iPhone X Display(inkl.Kamera &amp; Lautsprecher</string>
+    <string name="ersatzteildisplaypreis4">149,95€</string>
+    <string name="ersatzteildisplaydescription4">Ersetze ein gebrochenes Front Panel aus Glas oder ein defektes OLED Display an deinem iPhone X. </string>
+
+
+
+    // Kategorie Akku
+    <string name="ersatzteilakku1">iPhone X Akku</string>
+    <string name="ersatzteilakkupreis1">39,95€</string>
+    <string name="ersatzteilakkudescription1">Dieser iPhone X Ersatzakku ist genau das Richtige, um dein iPhone wieder zum Laufen zu bringen.</string>
 </resources>

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.abschlussaufgabe.databinding.ActivityMainBinding
-import com.example.abschlussaufgabe.model.MainViewModel
+import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,29 +39,17 @@ class MainActivity : AppCompatActivity() {
         viewModel.hideToolbar.observeForever {
             if (it == false) {
                 binding.cvToolbar.visibility = View.VISIBLE
-                //setFragmentMargins(fragmentParams)
-
-
             }
         }
 
         viewModel.hideNavigation.observeForever {
             if (it == false) {
                 binding.bottomNavigation.visibility = View.VISIBLE
-                //setFragmentMargins(fragmentParams)
-
             }
         }
 
+
     }
 
-
-    private fun setFragmentMargins(fragmentParams: ViewGroup.MarginLayoutParams){
-        if (viewModel.hideToolbar.value == true && viewModel.hideNavigation.value == false){
-            fragmentParams.setMargins(0,0,0,80)
-        } else {
-            fragmentParams.setMargins(0,80,0,80)
-        }
-    }
 
 }

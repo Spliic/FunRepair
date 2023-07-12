@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.abschlussaufgabe.R
 import com.example.abschlussaufgabe.databinding.FragmentRegisterBinding
-import com.example.abschlussaufgabe.model.MainViewModel
+import com.example.abschlussaufgabe.viewmodel.MainViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
