@@ -12,14 +12,26 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository = AppRepository(SortimentDatabase.getDatabase(application))
 
+
+    /**
+     * Setze LiveData für ErsatzteilListe
+     */
     private val _ersatzteilList = MutableLiveData<List<Artikel>>()
     val ersatzteilList : LiveData<List<Artikel>>
         get() = _ersatzteilList
 
+
+    /**
+     * Setze LiveData für WerkzeugListe
+     */
     private val _werkzeugList = MutableLiveData<List<Artikel>>()
     val werkzeugList: LiveData<List<Artikel>>
         get() = _werkzeugList
 
+
+    /**
+     * Setze LiveData für AnleitungsListe
+     */
     private val _anleitungList = MutableLiveData<List<Artikel>>()
     val anleitungList: LiveData<List<Artikel>>
         get() = _anleitungList

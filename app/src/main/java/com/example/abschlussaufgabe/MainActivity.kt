@@ -26,12 +26,6 @@ class MainActivity : AppCompatActivity() {
          */
         binding.cvToolbar.visibility = View.GONE
         binding.bottomNavigation.visibility = View.GONE
-        val fragmentParams = binding.fragmentContainerView3.layoutParams as ViewGroup.MarginLayoutParams
-
-        /**
-         * Hier setzten wir vom Fragment die Margins
-         */
-        fragmentParams.setMargins(0,0,0,0)
 
         /**
          *  Hier Observen wir vom Viewmodel und setzten die Sichtbarkeit und die Magins des Fragments.
@@ -45,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.hideNavigation.observeForever {
             if (it == false) {
                 binding.bottomNavigation.visibility = View.VISIBLE
+            } else {
+                binding.bottomNavigation.visibility = View.GONE
             }
         }
 
