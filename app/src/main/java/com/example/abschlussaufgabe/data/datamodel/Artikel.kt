@@ -13,5 +13,6 @@ data class Artikel(
     var artikelBeschreibung: String,
     var bild: Int,
     var anleitungPdf: String,
-    var kategorie: String
+    var kategorie: String,
+    var unterkategorie: String
 )
