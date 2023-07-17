@@ -151,11 +151,19 @@ class AppRepository(private val database: SortimentDatabase) {
 
         // Sortiment Buttons
 
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Connector Einheit", preis = 99.95, artikelBeschreibung = "Ersetze den Lightning Connector und das Mikrofon in deinem iPhone 11 Pro Max.", bild = R.drawable.anschluss11, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Connector Einheit", preis = 99.95, artikelBeschreibung = "Ersetze den Lightning Connector und das Mikrofon in deinem iPhone 11 Pro Max.", bild = R.drawable.anschluss11, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Connector Einheit", preis = 99.95, artikelBeschreibung = "Ersetze den Lightning Connector und das Mikrofon in deinem iPhone 11 Pro Max.", bild = R.drawable.anschluss11, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Connector Einheit", preis = 99.95, artikelBeschreibung = "Ersetze den Lightning Connector und das Mikrofon in deinem iPhone 11 Pro Max.", bild = R.drawable.anschluss11, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 7/ 7 Plus / 8 / 8 Plus Home Button", preis = 19.95, artikelBeschreibung = "Ersetze die Home Button Einheit in deinem iPhone 7/7 Plus/8/8 Plus und repariere so einen kaputten Home Button.", bild = R.drawable.button7, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 7 Gehäusetasten Set", preis = 0.99, artikelBeschreibung = "Dieses Set beinhaltet alle äusseren Gehäusetasten: die Power/Lock Taste, die Lautstärke-Regler und die Stummtaste, damit du die Tasten mit Schönheitsfehlern austauschen kannst.", bild = R.drawable.button7gehause, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 5C Audiosteuerung", preis = 2.95, artikelBeschreibung = "Wenn die Lautstärkeregler oder der Power Button nicht mehr reagieren oder der Stummschalter nicht mehr richtig funktioniert, ist wahrscheinlich dieses Ersatzteil das Richtige!", bild = R.drawable.button5audio, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 5 Volume Button", preis = 0.95, artikelBeschreibung = "Es handelt sich hierbei nur um den sichtbaren Kunststoff-Schalter.", bild = R.drawable.button5volume, anleitungPdf = "", kategorie = "", unterkategorie = "Buttons"))
 
+
+        // Sortiment Gehäuse komponente
+
+
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone X Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.hausx, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 6s Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus6s, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus8, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 7 Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus7, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
 
 
 
