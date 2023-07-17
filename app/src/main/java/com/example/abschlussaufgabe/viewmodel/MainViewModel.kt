@@ -37,6 +37,8 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         get() = _anleitungList
 
 
+
+
     init {
         repository.loadData()
         _anleitungList.value = repository.anleitungList.value

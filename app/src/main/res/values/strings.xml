@@ -51,9 +51,7 @@
     <string name="sortimentKitDescription2">In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphones brauchst.</string>
 
 
-
     // Strings für das Sortiment Ersatzteile //
-
 
 
     // Kategorie Display
@@ -75,7 +73,6 @@
     <string name="ersatzteildisplay4">iPhone X Display(inkl.Kamera &amp; Lautsprecher</string>
     <string name="ersatzteildisplaypreis4">149,95€</string>
     <string name="ersatzteildisplaydescription4">Ersetze ein gebrochenes Front Panel aus Glas oder ein defektes OLED Display an deinem iPhone X. </string>
-
 
 
     // Kategorie Akku
