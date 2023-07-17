@@ -37,8 +37,18 @@
     <string name="kategorieschneide6">Schneidewerkzeug</string>
     <string name="kategoriedescriptionschneide6">Keine Lust, stundenlang nach dem perfekten Tool zu suchen? Wir haben die Recherche für dich übernommen und eine breite Auswahl an hochwertigen Schneidwerkzeugen zusammengestellt. </string>
 
+
     // Strings für das Sortiment Werkzeuge Produkte
 
+
+    <string name="sortimentKitName1">Pro Tech Toolkit</string>
+    <string name="sortimentKitPreis1">74,99€</string>
+    <string name="sortimentKitDescription1">In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphones brauchst.</string>
+
+
+    <string name="sortimentKitName2">Pro Tech Toolkit</string>
+    <string name="sortimentKitPreis2">74,99€</string>
+    <string name="sortimentKitDescription2">In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphones brauchst.</string>
 
 
 
