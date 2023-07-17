@@ -89,11 +89,24 @@ class AppRepository(private val database: SortimentDatabase) {
 
         // Sortiment Werkzeug Greifwerkzeug
 
-        sortiment.add(Artikel(artikelBezeichnung = "Pinzette mit Kunststoffspitzen", preis = 4.95, artikelBeschreibung = "Speziell geeignet für kleine und empfindliche Komponenten. ESD-sichere Pinzette mit einer auswechselbaren Spitze aus abriebfestem Kunststoff, perfekt für das Hantieren mit empfindlicher Elektronik geeignet.", bild = R.drawable.hebelsteinel, anleitungPdf = "", kategorie = "Werkzeug"))
-        sortiment.add(Artikel(artikelBezeichnung = "Metall Pinzette", preis = 4.95, artikelBeschreibung = "Die Pinzetten aus rostfreiem Edelstahl sind mit einer ESD-sicheren Beschichtung versehen und können in verschiedenen Ausführungen (stumpf, spitz oder gebogen) bestellt werden.", bild = R.drawable.hebelsteinel, anleitungPdf = "", kategorie = "Werkzeug"))
-        sortiment.add(Artikel(artikelBezeichnung = "Metall Pinzetten Set", preis = 14.95, artikelBeschreibung = "Drei Spezial-Pinzetten haben wir für dich ausgewählt und zu einem Kit zusammengestellt. So ausgerüstet bereitet dir zukünftig auch das feinste Kabel keinerlei Kopfzerbrechen mehr.", bild = R.drawable.hebelsteinel, anleitungPdf = "", kategorie = "Werkzeug"))
-        sortiment.add(Artikel(artikelBezeichnung = "Magnetgreifer", preis = 5.95, artikelBeschreibung = "Ideal, um kleine Schrauben aus engen Zwischenräumen zu angeln! Kann auch dazu benutzt werden, den Schaft deines Schraubendrehers zeitweise zu magnetisieren, indem du den Magnetgreifer dagegen hältst.", bild = R.drawable.hebelsteinel, anleitungPdf = "", kategorie = "Werkzeug"))
-        sortiment.add(Artikel(artikelBezeichnung = "Schraubenlösende Zange", preis = 19.95, artikelBeschreibung = "Speziell designte Zähne greifen auch kleine Schraubenköpfe, Bolzen oder auch abgebrochene Schrauben, um sie zu entfernen.", bild = R.drawable.hebelsteinel, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Pinzette mit Kunststoffspitzen", preis = 4.95, artikelBeschreibung = "Speziell geeignet für kleine und empfindliche Komponenten. ESD-sichere Pinzette mit einer auswechselbaren Spitze aus abriebfestem Kunststoff, perfekt für das Hantieren mit empfindlicher Elektronik geeignet.", bild = R.drawable.greifpinzette, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Metall Pinzette", preis = 4.95, artikelBeschreibung = "Die Pinzetten aus rostfreiem Edelstahl sind mit einer ESD-sicheren Beschichtung versehen und können in verschiedenen Ausführungen (stumpf, spitz oder gebogen) bestellt werden.", bild = R.drawable.greifpinzettemetall, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Metall Pinzetten Set", preis = 14.95, artikelBeschreibung = "Drei Spezial-Pinzetten haben wir für dich ausgewählt und zu einem Kit zusammengestellt. So ausgerüstet bereitet dir zukünftig auch das feinste Kabel keinerlei Kopfzerbrechen mehr.", bild = R.drawable.greifpinzetteset, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Magnetgreifer", preis = 5.95, artikelBeschreibung = "Ideal, um kleine Schrauben aus engen Zwischenräumen zu angeln! Kann auch dazu benutzt werden, den Schaft deines Schraubendrehers zeitweise zu magnetisieren, indem du den Magnetgreifer dagegen hältst.", bild = R.drawable.greifermagnet, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Schraubenlösende Zange", preis = 19.95, artikelBeschreibung = "Speziell designte Zähne greifen auch kleine Schraubenköpfe, Bolzen oder auch abgebrochene Schrauben, um sie zu entfernen.", bild = R.drawable.greiferfuerschrauben, anleitungPdf = "", kategorie = "Werkzeug"))
+
+        // Sortiment Werkzeug Schutz
+
+        sortiment.add(Artikel(artikelBezeichnung = "Faltbare Antistatik-Matte", preis = 29.95, artikelBeschreibung = "Damit dieses Horrorszenario niemals eintritt und deine Elektronikgeräte nicht als teure Türstopper enden, empfehlen wir dir Elektronikreparaturen immer auf unserer faltbaren Antistatik-Matte durchzuführen. ", bild = R.drawable.schutzmatte, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "ESD Handschuhe", preis = 9.99, artikelBeschreibung = "Hochwertige, weiche ESD Handschuhe für den Umgang mit empfindlichen Komponenten.", bild = R.drawable.schutzhandschuhe, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Antistatik-Armband", preis = 4.95, artikelBeschreibung = "Schützt deine Elektronik vor Schäden durch elektrostatische Aufladung (ESD) während der Reparatur.", bild = R.drawable.schutzband, anleitungPdf = "", kategorie = "Werkzeug"))
+
+
+        // Sortiment Werkzeug Schneide
+
+        sortiment.add(Artikel(artikelBezeichnung = "Seitenschneider CHP-170", preis = 7.95, artikelBeschreibung = "C.H.P Werkzeuge werden in Italien hergestellt und kommen vor allem bei professionellen Anwendern und in der Industrie zum Einsatz.", bild = R.drawable.schneideseiten, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Gebogene Rasierklinge", preis = 4.95, artikelBeschreibung = "Die große gebogene Rasierklinge verfügt über einen handlichen Griff, damit du die Klinge gezielt ansetzen kannst.", bild = R.drawable.schneideklinge, anleitungPdf = "", kategorie = "Werkzeug"))
+        sortiment.add(Artikel(artikelBezeichnung = "Cutter", preis = 4.95, artikelBeschreibung = "Cuttermesser für den täglichen Einsatz", bild = R.drawable.schneidecutter, anleitungPdf = "", kategorie = "Werkzeug"))
 
 
 
@@ -101,16 +114,17 @@ class AppRepository(private val database: SortimentDatabase) {
 
 
 
-
-
-
-
+        // Kategorie Ersatzteile
 
         sortiment.add(Artikel(artikelBezeichnung = "Display Kit's", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
         sortiment.add(Artikel(artikelBezeichnung = "Akku Kit's", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
-        sortiment.add(Artikel(artikelBezeichnung = "USB Buchse Kit's", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
-        sortiment.add(Artikel(artikelBezeichnung = "Kamera Kit's", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
-        sortiment.add(Artikel(artikelBezeichnung = "FaceID Kit's", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
+        sortiment.add(Artikel(artikelBezeichnung = "Anschlüsse", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
+        sortiment.add(Artikel(artikelBezeichnung = "Buttons", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
+        sortiment.add(Artikel(artikelBezeichnung = "Gehäusekomponenten", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Ersatzteile"))
+
+
+        // Sortiment Display Kit's
+
 
         sortiment.add(Artikel(artikelBezeichnung = "Display Anleitung", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Anleitung"))
         sortiment.add(Artikel(artikelBezeichnung = "Akku Anleitung", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Anleitung"))
