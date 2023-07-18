@@ -1,6 +1,5 @@
 package com.example.abschlussaufgabe.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -32,19 +31,20 @@ class KategorieAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
-        val werkzeug = datasource[position]
+        val kategorie = datasource[position]
 
-        holder.binding.ivItem.setImageResource(werkzeug.bild)
-        holder.binding.tvProductname.setText(werkzeug.artikelBezeichnung)
-        holder.binding.tvDescription.setText(werkzeug.artikelBeschreibung)
+        holder.binding.ivItem.setImageResource(kategorie.bild)
+        holder.binding.tvProductname.setText(kategorie.artikelBezeichnung)
+        holder.binding.tvDescription.setText(kategorie.artikelBeschreibung)
 
 
         holder.binding.mcvItem.setOnClickListener {
 
-            viewModel.setSortimentList(getCategoryList(werkzeug))
-            holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSortimentFragment(werkzeug.artikelBezeichnung))
+            viewModel.setSortimentList(getCategoryList(kategorie))
+            holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSortimentFragment(kategorie.artikelBezeichnung))
         }
     }
+
 
     private fun getCategoryList(werkzeug: Artikel): List<Artikel>{
         val kategorieList = mutableListOf<Artikel>()
@@ -54,7 +54,6 @@ class KategorieAdapter(
                 kategorieList.add(i)
             }
         }
-        Log.e("WerkzeugAdapter","Error loading List ${kategorieList.size}")
         return kategorieList
     }
 

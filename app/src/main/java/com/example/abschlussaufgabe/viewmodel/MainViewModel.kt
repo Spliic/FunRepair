@@ -45,11 +45,8 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     val completeSortimentList = repository.completeSortimentList
 
-
-
     fun setSortimentList(liste: List<Artikel>){
         _sortimentList.value = liste
-
     }
 
 
@@ -80,8 +77,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private val _currentFragment = MutableLiveData<String>()
     val currentFragment: LiveData<String>
         get() = _currentFragment
-
-
 
     fun setCurrentFragment(currentFragment: String){
         _currentFragment.value = currentFragment
