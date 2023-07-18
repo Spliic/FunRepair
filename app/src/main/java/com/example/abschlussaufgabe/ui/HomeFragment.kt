@@ -1,6 +1,7 @@
 package com.example.abschlussaufgabe.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,8 +24,14 @@ class HomeFragment : Fragment() {
         super.onStart()
         viewModel.hideNavigation(false)
 
+
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.e("HomeFragment","dwadada")
+        viewModel.hideToolbar(true)
+    }
 
     /**
      * die OnCreateView zeigt das UI Element an
@@ -46,26 +53,24 @@ class HomeFragment : Fragment() {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
         }
 
-        binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.ersatzteilList.value!!)
+        viewModel.ersatzteilList.observe(viewLifecycleOwner){ersatzteilList ->
+            binding.rvNewitem.adapter = WerkzeugAdapter(ersatzteilList,viewModel)
+
+        }
 
 
+       // TODO: Observen
         binding.cvErsatzteile.setOnClickListener {
-            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.ersatzteilList.value!!)
+            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.ersatzteilList.value!!,viewModel)
         }
 
         binding.cvWerkzeug.setOnClickListener {
-            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.werkzeugList.value!!)
+            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.werkzeugList.value!!,viewModel)
         }
 
         binding.cvAnleitung.setOnClickListener {
-            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.anleitungList.value!!)
+            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.anleitungList.value!!,viewModel)
         }
-
-
-
-
-
-
 
     }
 

@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.hideToolbar.observeForever {
             if (it == false) {
                 binding.cvToolbar.visibility = View.VISIBLE
+            } else {
+                binding.cvToolbar.visibility = View.GONE
             }
         }
 

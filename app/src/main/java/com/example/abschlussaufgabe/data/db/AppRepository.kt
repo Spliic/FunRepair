@@ -3,6 +3,7 @@ package com.example.abschlussaufgabe.data.db
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.room.Database
 import com.example.abschlussaufgabe.R
 import com.example.abschlussaufgabe.data.datamodel.Artikel
 import java.lang.Exception
@@ -23,9 +24,16 @@ class AppRepository(private val database: SortimentDatabase) {
         get() = _anleitungList
 
 
+    val completeSortimentList: List<Artikel> = database.artikelDao.getAll()
+
+
+
+
+
     val werkzeuge = mutableListOf<Artikel>()
     val ersatzteile = mutableListOf<Artikel>()
     val anleitungen = mutableListOf<Artikel>()
+
 
     init {
         database.artikelDao.deleteAll()
@@ -50,7 +58,6 @@ class AppRepository(private val database: SortimentDatabase) {
         _werkzeugList.value = _werkzeugList.value?.plus(werkzeuge)?: werkzeuge
         _ersatzteilList.value = _ersatzteilList.value?.plus(ersatzteile) ?:ersatzteile
         _anleitungList.value = _anleitungList.value?.plus(anleitungen)?:anleitungen
-
     }
 
 
@@ -67,11 +74,11 @@ class AppRepository(private val database: SortimentDatabase) {
 
         // Sortiment Werkzeug Tool Kits
 
-        sortiment.add(Artikel(artikelBezeichnung = "Pro Tech Toolkit", preis = 74.99, artikelBeschreibung = "In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphone brauchst.", bild = R.drawable.toolkits, anleitungPdf = "", kategorie = "", unterkategorie = "Toolkits"))
-        sortiment.add(Artikel(artikelBezeichnung = "iOpener", preis = 12.99, artikelBeschreibung = "Mit dem iOpener löst du problemlos und schnell Klebeverbindungen, ohne das Risiko, mit einer Heißluftpistole und zu viel Hitze dein Gerät zu beschädigen. ", bild = R.drawable.toolkitsiopener, anleitungPdf = "", kategorie = "", unterkategorie = "Toolkits"))
-        sortiment.add(Artikel(artikelBezeichnung = "Essential Electronics Toolkit", preis = 29.99, artikelBeschreibung = "Unser Essential Electronics Toolkit bringt deswegen alles mit, was du für die meisten Elektronikreparaturen benötigst. Kompakt und immer griffbereit.", bild = R.drawable.toolkitsessential, anleitungPdf = "", kategorie = "", unterkategorie = "Toolkits"))
-        sortiment.add(Artikel(artikelBezeichnung = "Repair Business Toolkit", preis = 299.99, artikelBeschreibung = "Eine komplette Reparaturwerkstatt in einer einzigen Tasche. Unser ultimatives Profi-Werkzeugset wurde 2023 komplett überarbeitet und enthält bewährte, hochwertige Werkzeuge, die sorgfältig mit der neuesten und besten Reparaturtechnologie zusammengestellt wurden.", bild = R.drawable.toolkitsbusiness, anleitungPdf = "", kategorie = "", unterkategorie = "Toolkits"))
-        sortiment.add(Artikel(artikelBezeichnung = "Pro Tech Diagnose", preis = 69.99, artikelBeschreibung = "Am besten untersuchst du die Ursache mit unserem Pro Tech Diagnose Kit, um deine Fehlersuche sicher und fachmännisch durchzuführen.", bild = R.drawable.toolkitsdiagnose, anleitungPdf = "", kategorie = "", unterkategorie = "Toolkits"))
+        sortiment.add(Artikel(artikelBezeichnung = "Pro Tech Toolkit", preis = 74.99, artikelBeschreibung = "In unserem hochwertigen Pro Tech Toolkit findest du alle Werkzeuge, die du für die Reparatur von Smartphone brauchst.", bild = R.drawable.toolkits, anleitungPdf = "", kategorie = "", unterkategorie = "Tool Kits"))
+        sortiment.add(Artikel(artikelBezeichnung = "iOpener", preis = 12.99, artikelBeschreibung = "Mit dem iOpener löst du problemlos und schnell Klebeverbindungen, ohne das Risiko, mit einer Heißluftpistole und zu viel Hitze dein Gerät zu beschädigen. ", bild = R.drawable.toolkitsiopener, anleitungPdf = "", kategorie = "", unterkategorie = "Tool Kits"))
+        sortiment.add(Artikel(artikelBezeichnung = "Essential Electronics Toolkit", preis = 29.99, artikelBeschreibung = "Unser Essential Electronics Toolkit bringt deswegen alles mit, was du für die meisten Elektronikreparaturen benötigst. Kompakt und immer griffbereit.", bild = R.drawable.toolkitsessential, anleitungPdf = "", kategorie = "", unterkategorie = "Tool Kits"))
+        sortiment.add(Artikel(artikelBezeichnung = "Repair Business Toolkit", preis = 299.99, artikelBeschreibung = "Eine komplette Reparaturwerkstatt in einer einzigen Tasche. Unser ultimatives Profi-Werkzeugset wurde 2023 komplett überarbeitet und enthält bewährte, hochwertige Werkzeuge, die sorgfältig mit der neuesten und besten Reparaturtechnologie zusammengestellt wurden.", bild = R.drawable.toolkitsbusiness, anleitungPdf = "", kategorie = "", unterkategorie = "Tool Kits"))
+        sortiment.add(Artikel(artikelBezeichnung = "Pro Tech Diagnose", preis = 69.99, artikelBeschreibung = "Am besten untersuchst du die Ursache mit unserem Pro Tech Diagnose Kit, um deine Fehlersuche sicher und fachmännisch durchzuführen.", bild = R.drawable.toolkitsdiagnose, anleitungPdf = "", kategorie = "", unterkategorie = "Tool Kits"))
 
         // Sortiment Werkzeug Schraubendreherwerkzeug
 
@@ -99,9 +106,9 @@ class AppRepository(private val database: SortimentDatabase) {
 
         // Sortiment Werkzeug Schutz
 
-        sortiment.add(Artikel(artikelBezeichnung = "Faltbare Antistatik-Matte", preis = 29.95, artikelBeschreibung = "Damit dieses Horrorszenario niemals eintritt und deine Elektronikgeräte nicht als teure Türstopper enden, empfehlen wir dir Elektronikreparaturen immer auf unserer faltbaren Antistatik-Matte durchzuführen. ", bild = R.drawable.schutzmatte, anleitungPdf = "", kategorie = "", unterkategorie = "Schutz"))
-        sortiment.add(Artikel(artikelBezeichnung = "ESD Handschuhe", preis = 9.99, artikelBeschreibung = "Hochwertige, weiche ESD Handschuhe für den Umgang mit empfindlichen Komponenten.", bild = R.drawable.schutzhandschuhe, anleitungPdf = "", kategorie = "", unterkategorie = "Schutz"))
-        sortiment.add(Artikel(artikelBezeichnung = "Antistatik-Armband", preis = 4.95, artikelBeschreibung = "Schützt deine Elektronik vor Schäden durch elektrostatische Aufladung (ESD) während der Reparatur.", bild = R.drawable.schutzband, anleitungPdf = "", kategorie = "", unterkategorie = "Schutz"))
+        sortiment.add(Artikel(artikelBezeichnung = "Faltbare Antistatik-Matte", preis = 29.95, artikelBeschreibung = "Damit dieses Horrorszenario niemals eintritt und deine Elektronikgeräte nicht als teure Türstopper enden, empfehlen wir dir Elektronikreparaturen immer auf unserer faltbaren Antistatik-Matte durchzuführen. ", bild = R.drawable.schutzmatte, anleitungPdf = "", kategorie = "", unterkategorie = "ESD Schutz"))
+        sortiment.add(Artikel(artikelBezeichnung = "ESD Handschuhe", preis = 9.99, artikelBeschreibung = "Hochwertige, weiche ESD Handschuhe für den Umgang mit empfindlichen Komponenten.", bild = R.drawable.schutzhandschuhe, anleitungPdf = "", kategorie = "", unterkategorie = "ESD Schutz"))
+        sortiment.add(Artikel(artikelBezeichnung = "Antistatik-Armband", preis = 4.95, artikelBeschreibung = "Schützt deine Elektronik vor Schäden durch elektrostatische Aufladung (ESD) während der Reparatur.", bild = R.drawable.schutzband, anleitungPdf = "", kategorie = "", unterkategorie = "ESD Schutz"))
 
 
         // Sortiment Werkzeug Schneide
@@ -127,27 +134,27 @@ class AppRepository(private val database: SortimentDatabase) {
 
         // Sortiment Display Kit's
 
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Display", preis = 74.95, artikelBeschreibung = "Auf diesem iPhone 8 Display sind alle kleinen Komponenten bereits vorinstalliert - das spart Zeit und Nerven bei der Reparatur.", bild = R.drawable.display8, anleitungPdf = "", kategorie = "", unterkategorie = "Display"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Display", preis = 99.95, artikelBeschreibung = "Tausche ein verkratztes oder gesplittertes Frontpanel aus Glas mit Touchscreen oder ein defektes \"Liquid Retina\" LCD Display. Dieses Teil ist kompatibel mit einem iPhone 11.", bild = R.drawable.display11, anleitungPdf = "", kategorie = "", unterkategorie = "Display"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Display", preis = 129.95, artikelBeschreibung = "Ersetze ein gebrochenes Front Panel aus Glas oder ein defektes OLED Display an deinem iPhone 11 Pro.", bild = R.drawable.display11pro, anleitungPdf = "", kategorie = "", unterkategorie = "Display"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Display(OLED)", preis = 169.95, artikelBeschreibung = "Ersetze ein verkratztes oder gesplittertes Frontpanel aus Glas mit Touchscreen oder ein defektes \"Super Retina XDR\" OLED Display. Dieses Teil ist kompatibel mit einem iPhone 11 Pro Max.", bild = R.drawable.display11promax, anleitungPdf = "", kategorie = "", unterkategorie = "Display"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 12/12Pro Display(OLED)", preis = 189.95, artikelBeschreibung = "Ersetze ein verkratztes oder gebrochenes Front Panel aus Glas mit Touchscreen oder ein defektes Super Retina XDR OLED Display. Dieses Ersatzteil ist mit dem iPhone 12 und dem iPhone 12 Pro kompatibel.", bild = R.drawable.display12, anleitungPdf = "", kategorie = "", unterkategorie = "Display"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Display", preis = 74.95, artikelBeschreibung = "Auf diesem iPhone 8 Display sind alle kleinen Komponenten bereits vorinstalliert - das spart Zeit und Nerven bei der Reparatur.", bild = R.drawable.display8, anleitungPdf = "", kategorie = "", unterkategorie = "Display Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Display", preis = 99.95, artikelBeschreibung = "Tausche ein verkratztes oder gesplittertes Frontpanel aus Glas mit Touchscreen oder ein defektes \"Liquid Retina\" LCD Display. Dieses Teil ist kompatibel mit einem iPhone 11.", bild = R.drawable.display11, anleitungPdf = "", kategorie = "", unterkategorie = "Display Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Display", preis = 129.95, artikelBeschreibung = "Ersetze ein gebrochenes Front Panel aus Glas oder ein defektes OLED Display an deinem iPhone 11 Pro.", bild = R.drawable.display11pro, anleitungPdf = "", kategorie = "", unterkategorie = "Display Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Display(OLED)", preis = 169.95, artikelBeschreibung = "Ersetze ein verkratztes oder gesplittertes Frontpanel aus Glas mit Touchscreen oder ein defektes \"Super Retina XDR\" OLED Display. Dieses Teil ist kompatibel mit einem iPhone 11 Pro Max.", bild = R.drawable.display11promax, anleitungPdf = "", kategorie = "", unterkategorie = "Display Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 12/12Pro Display(OLED)", preis = 189.95, artikelBeschreibung = "Ersetze ein verkratztes oder gebrochenes Front Panel aus Glas mit Touchscreen oder ein defektes Super Retina XDR OLED Display. Dieses Ersatzteil ist mit dem iPhone 12 und dem iPhone 12 Pro kompatibel.", bild = R.drawable.display12, anleitungPdf = "", kategorie = "", unterkategorie = "Display Kit's"))
 
         // Sortiment Akku
 
 
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Akku", preis = 24.95, artikelBeschreibung = "Dieser iPhone 8 Ersatzakku ist genau das Richtige, um dein kaputtes iPhone 8 wieder zum Laufen zu bringen!", bild = R.drawable.akku8, anleitungPdf = "", kategorie = "", unterkategorie = "Akku"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Akku", preis = 39.95, artikelBeschreibung = "Mit diesem iPhone 11 Austauschakku bringst du dein iPhone 11 wieder zum Laufen!", bild = R.drawable.akku11, anleitungPdf = "", kategorie = "", unterkategorie = "Akku"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Akku", preis = 49.95, artikelBeschreibung = "Mit diesem Austauschakku kannst du dein defektes iPhone 11 Pro wieder zum Laufen bringen!", bild = R.drawable.akku11pro, anleitungPdf = "", kategorie = "", unterkategorie = "Akku"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Akku", preis = 54.95, artikelBeschreibung = "Dieser Austauschakku bringt dein kaputtes iPhone 11 Pro Max wieder zum Laufen!", bild = R.drawable.akku11promax, anleitungPdf = "", kategorie = "", unterkategorie = "Akku"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 12 Pro Max Akku", preis = 54.95, artikelBeschreibung = "Dieser iPhone 12 Pro Max Ersatzakku ist genau das Richtige, um dein iPhone wieder zum Laufen zu bringen!", bild = R.drawable.akku12, anleitungPdf = "", kategorie = "", unterkategorie = "Akku"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Akku", preis = 24.95, artikelBeschreibung = "Dieser iPhone 8 Ersatzakku ist genau das Richtige, um dein kaputtes iPhone 8 wieder zum Laufen zu bringen!", bild = R.drawable.akku8, anleitungPdf = "", kategorie = "", unterkategorie = "Akku Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Akku", preis = 39.95, artikelBeschreibung = "Mit diesem iPhone 11 Austauschakku bringst du dein iPhone 11 wieder zum Laufen!", bild = R.drawable.akku11, anleitungPdf = "", kategorie = "", unterkategorie = "Akku Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Akku", preis = 49.95, artikelBeschreibung = "Mit diesem Austauschakku kannst du dein defektes iPhone 11 Pro wieder zum Laufen bringen!", bild = R.drawable.akku11pro, anleitungPdf = "", kategorie = "", unterkategorie = "Akku Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Akku", preis = 54.95, artikelBeschreibung = "Dieser Austauschakku bringt dein kaputtes iPhone 11 Pro Max wieder zum Laufen!", bild = R.drawable.akku11promax, anleitungPdf = "", kategorie = "", unterkategorie = "Akku Kit's"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 12 Pro Max Akku", preis = 54.95, artikelBeschreibung = "Dieser iPhone 12 Pro Max Ersatzakku ist genau das Richtige, um dein iPhone wieder zum Laufen zu bringen!", bild = R.drawable.akku12, anleitungPdf = "", kategorie = "", unterkategorie = "Akku Kit's"))
 
         // Sortiment Anschlüsse
 
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Connector Einheit", preis = 99.95, artikelBeschreibung = "Ersetze den Lightning Connector und das Mikrofon in deinem iPhone 11 Pro Max.", bild = R.drawable.anschluss11, anleitungPdf = "", kategorie = "", unterkategorie = "Anschluss"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 5c Lightning Connector", preis = 14.95, artikelBeschreibung = "Die Baugruppe aus Lightning Connector und Kopfhörerbuchse für das iPhone 5c ist die Lösung für Verbindungsprobleme oder Schwierigkeiten beim Laden.", bild = R.drawable.anschluss5, anleitungPdf = "", kategorie = "", unterkategorie = "Anschluss"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone SE Lightning Connector", preis = 19.95, artikelBeschreibung = "Dein iPhone SE (1. Generation) lädt nicht mehr? Das Mikrofon funktioniert nicht? Dieses Ersatzteil kann die Lösung sein!", bild = R.drawable.anschlussse, anleitungPdf = "", kategorie = "", unterkategorie = "Anschluss"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Plus Lightning Connector", preis = 24.95, artikelBeschreibung = "Du hast Probleme mit dem Laden oder mit der Verbindung? Wir haben die Lösung!", bild = R.drawable.anschluss8, anleitungPdf = "", kategorie = "", unterkategorie = "Anschluss"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 11 Pro Max Connector Einheit", preis = 99.95, artikelBeschreibung = "Ersetze den Lightning Connector und das Mikrofon in deinem iPhone 11 Pro Max.", bild = R.drawable.anschluss11, anleitungPdf = "", kategorie = "", unterkategorie = "Anschlüsse"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 5c Lightning Connector", preis = 14.95, artikelBeschreibung = "Die Baugruppe aus Lightning Connector und Kopfhörerbuchse für das iPhone 5c ist die Lösung für Verbindungsprobleme oder Schwierigkeiten beim Laden.", bild = R.drawable.anschluss5, anleitungPdf = "", kategorie = "", unterkategorie = "Anschlüsse"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone SE Lightning Connector", preis = 19.95, artikelBeschreibung = "Dein iPhone SE (1. Generation) lädt nicht mehr? Das Mikrofon funktioniert nicht? Dieses Ersatzteil kann die Lösung sein!", bild = R.drawable.anschlussse, anleitungPdf = "", kategorie = "", unterkategorie = "Anschlüsse"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Plus Lightning Connector", preis = 24.95, artikelBeschreibung = "Du hast Probleme mit dem Laden oder mit der Verbindung? Wir haben die Lösung!", bild = R.drawable.anschluss8, anleitungPdf = "", kategorie = "", unterkategorie = "Anschlüsse"))
 
         // Sortiment Buttons
 
@@ -160,10 +167,10 @@ class AppRepository(private val database: SortimentDatabase) {
         // Sortiment Gehäuse komponente
 
 
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone X Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.hausx, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 6s Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus6s, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus8, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
-        sortiment.add(Artikel(artikelBezeichnung = "iPhone 7 Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus7, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäuse"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone X Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.hausx, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäusekomponenten"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 6s Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus6s, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäusekomponenten"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 8 Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus8, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäusekomponenten"))
+        sortiment.add(Artikel(artikelBezeichnung = "iPhone 7 Insight Case", preis = 9.95, artikelBeschreibung = "Wir wissen ja, wie gerne du das Innenleben deines iPhones mit unseren Teardown Hintergrundbildern zur Schau stellst. Wir wissen aber auch, dass es dir noch wichtiger ist, dass dein iPhone gut funktioniert.", bild = R.drawable.haus7, anleitungPdf = "", kategorie = "", unterkategorie = "Gehäusekomponenten"))
 
 
 
