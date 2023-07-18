@@ -37,6 +37,8 @@ class SortimentFragment : Fragment() {
         arguments?.let{
             unterkategorie = it.getString("unterkategorie")
         }
+
+
     }
 
 
@@ -47,7 +49,6 @@ class SortimentFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_sortiment,container,false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,6 +56,5 @@ class SortimentFragment : Fragment() {
 
         val filteredSortiment = viewModel.completeSortimentList.filter {it.unterkategorie == unterkategorie}
         binding.rvSortiment.adapter = SortimentAdapter(filteredSortiment)
-
     }
 }
