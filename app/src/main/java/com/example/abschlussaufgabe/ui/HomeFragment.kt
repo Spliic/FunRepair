@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.abschlussaufgabe.adapter.WerkzeugAdapter
+import com.example.abschlussaufgabe.adapter.KategorieAdapter
 import com.example.abschlussaufgabe.databinding.FragmentHomeBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 import com.google.firebase.auth.ktx.auth
@@ -54,22 +54,22 @@ class HomeFragment : Fragment() {
         }
 
         viewModel.ersatzteilList.observe(viewLifecycleOwner){ersatzteilList ->
-            binding.rvNewitem.adapter = WerkzeugAdapter(ersatzteilList,viewModel)
+            binding.rvNewitem.adapter = KategorieAdapter(ersatzteilList,viewModel)
 
         }
 
 
        // TODO: Observen
         binding.cvErsatzteile.setOnClickListener {
-            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.ersatzteilList.value!!,viewModel)
+            binding.rvNewitem.adapter = KategorieAdapter(viewModel.ersatzteilList.value!!,viewModel)
         }
 
         binding.cvWerkzeug.setOnClickListener {
-            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.werkzeugList.value!!,viewModel)
+            binding.rvNewitem.adapter = KategorieAdapter(viewModel.werkzeugList.value!!,viewModel)
         }
 
         binding.cvAnleitung.setOnClickListener {
-            binding.rvNewitem.adapter = WerkzeugAdapter(viewModel.anleitungList.value!!,viewModel)
+            binding.rvNewitem.adapter = KategorieAdapter(viewModel.anleitungList.value!!,viewModel)
         }
 
     }

@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                 binding.cvToolbar.visibility = View.GONE
             }
         }
-
         viewModel.hideNavigation.observeForever {
             if (it == false) {
                 binding.bottomNavigation.visibility = View.VISIBLE
@@ -51,7 +50,6 @@ class MainActivity : AppCompatActivity() {
                 binding.bottomNavigation.visibility = View.GONE
             }
         }
-
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId){
@@ -79,21 +77,18 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
             }
-
         }
-
-
-
-
-
-
     }
 
+
+    /**
+     * Ersetzt ein Fragment mit einem gegebene Fragment
+     * @param fragment ist das Fragment das angezeigt werden soll.
+     */
     private fun replaceFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView3,fragment)
             .commit()
     }
-
 
 }

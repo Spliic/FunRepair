@@ -10,10 +10,10 @@ import com.example.abschlussaufgabe.databinding.WerkzeugItemListBinding
 import com.example.abschlussaufgabe.ui.HomeFragmentDirections
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
-class WerkzeugAdapter(
+class KategorieAdapter(
     private val datasource: List<Artikel>,
     private val viewModel: MainViewModel
-) : RecyclerView.Adapter<WerkzeugAdapter.ItemViewHolder>() {
+) : RecyclerView.Adapter<KategorieAdapter.ItemViewHolder>() {
 
 
     inner class ItemViewHolder(val binding: WerkzeugItemListBinding) :
