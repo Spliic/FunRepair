@@ -20,16 +20,20 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
 
+    /**
+     * hier Blenden wir die Navigationbar aus.
+     */
     override fun onStart() {
         super.onStart()
         viewModel.hideNavigation(false)
-
-
     }
 
+
+    /**
+     * Hier blenden wir die Toolbar wieder aus wenn wir zurück Navigieren im Fragment
+     */
     override fun onResume() {
         super.onResume()
-        Log.e("HomeFragment","dwadada")
         viewModel.hideToolbar(true)
     }
 
@@ -59,7 +63,6 @@ class HomeFragment : Fragment() {
         }
 
 
-       // TODO: Observen
         binding.cvErsatzteile.setOnClickListener {
             binding.rvNewitem.adapter = KategorieAdapter(viewModel.ersatzteilList.value!!,viewModel)
         }

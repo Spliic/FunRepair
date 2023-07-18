@@ -11,6 +11,10 @@ import java.lang.Exception
 
 class AppRepository(private val database: SortimentDatabase) {
 
+
+    /**
+     * Es werden drei MutableLiveData-Objekte erstellt: _werkzeugList, _ersatzteilList und _anleitungList, die Listen von Artikel-Objekten speichern.
+     */
     private val _werkzeugList = MutableLiveData<List<Artikel>>()
     val werkzeugList: LiveData<List<Artikel>>
         get() = _werkzeugList
@@ -24,23 +28,34 @@ class AppRepository(private val database: SortimentDatabase) {
         get() = _anleitungList
 
 
+    /**
+     * Die Variable completeSortimentList wird mit der Methode getAll() des artikelDao aus der Datenbank initialisiert.
+     * Diese Methode ruft alle Artikel aus der Datenbank ab und speichert sie in der Liste completeSortimentList.
+     */
     val completeSortimentList: List<Artikel> = database.artikelDao.getAll()
 
 
-
-
-
+    /**
+     * Hier erstelle ich leere MutableListen vom Model Artikel
+     */
     val werkzeuge = mutableListOf<Artikel>()
     val ersatzteile = mutableListOf<Artikel>()
     val anleitungen = mutableListOf<Artikel>()
 
 
+
+    /**
+     * Im Konstruktor werden alle vorhandenen Daten in der Datenbanktabelle gelöscht und Beispiel-Daten eingefügt.
+     */
     init {
         database.artikelDao.deleteAll()
         exampleData()
-
     }
 
+
+    /**
+     * Die Funktion loadData() lädt Daten aus einer Datenbank und verteilt sie in verschiedene Listen basierend auf der Kategorie jedes Elements.
+     */
     fun loadData(){
         val unsortedList = database.artikelDao.getAll()
 
@@ -61,6 +76,9 @@ class AppRepository(private val database: SortimentDatabase) {
     }
 
 
+    /**
+     * Sortiment was in die Datenbank befüllt wird.
+     */
     fun exampleData(){
 
         // Werkzeug Kategorie
