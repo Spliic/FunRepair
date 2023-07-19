@@ -45,7 +45,6 @@ class KategorieAdapter(
         }
     }
 
-
     private fun getCategoryList(werkzeug: Artikel): List<Artikel>{
         val kategorieList = mutableListOf<Artikel>()
 

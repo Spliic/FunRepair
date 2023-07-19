@@ -194,42 +194,12 @@ class AppRepository(private val database: SortimentDatabase) {
 
 
 
+        // Kategorie Anleitung
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        sortiment.add(Artikel(artikelBezeichnung = "Display Anleitung", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Anleitung", unterkategorie = ""))
-        sortiment.add(Artikel(artikelBezeichnung = "Akku Anleitung", preis = 0.0, artikelBeschreibung = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et", bild = 0, anleitungPdf = "", kategorie = "Anleitung", unterkategorie = ""))
+        sortiment.add(Artikel(artikelBezeichnung = "Display Anleitung", preis = 0.0, artikelBeschreibung = "Wenn das Display deines iPhone 11 zerbrochen ist, kein Bild beim Einschalten zeigt oder nicht auf Berührung reagiert, kannst du mit Hilfe dieser Anleitung dein iPhone wieder zum Laufen bringen.", bild = R.drawable.anleitungdisplay, anleitungPdf = "", kategorie = "Anleitung", unterkategorie = ""))
+        sortiment.add(Artikel(artikelBezeichnung = "Akku Anleitung", preis = 0.0, artikelBeschreibung = "Mit Hilfe dieser Anleitung kannst du den Akku ersetzen, um wieder eine normale Ladefähigkeit zu erhalten.", bild = R.drawable.anleitungakku, anleitungPdf = "", kategorie = "Anleitung", unterkategorie = ""))
+        sortiment.add(Artikel(artikelBezeichnung = "Lautsprecher Anleitung", preis = 0.0, artikelBeschreibung = "Diese Anleitung zeigt dir, wie du den Hauptlautsprecher im iPhone 11 austauschen kannst.", bild = R.drawable.anleitungkamera, anleitungPdf = "", kategorie = "Anleitung", unterkategorie = ""))
+        sortiment.add(Artikel(artikelBezeichnung = "Kamera Anleitung", preis = 0.0, artikelBeschreibung = "Nutze diese Anleitung, um die Rückkameras deines iPhone 11 zu ersetzen. Die Einheit besteht aus einer Weitwinkelkamera und einer Ultraweitwinkelkamera, die als Einheit ausgetauscht werden.", bild = R.drawable.anleitunglautsprecher, anleitungPdf = "", kategorie = "Anleitung", unterkategorie = ""))
 
 
 
