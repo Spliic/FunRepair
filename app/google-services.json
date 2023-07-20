@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692262134396",
+    "project_id": "funrepair-login-register",
+    "storage_bucket": "funrepair-login-register.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692262134396:android:f15715fd2a4fea6ffd1ff9",
+        "android_client_info": {
+          "package_name": "com.example.abschlussaufgabe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692262134396-3d9p2qbj3d5b8ljfpup546ehu4drs7lm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtrbPtB11eCB8qqlVPWzO4GSbWnydOle8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692262134396-3d9p2qbj3d5b8ljfpup546ehu4drs7lm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
