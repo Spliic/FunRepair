@@ -23,6 +23,7 @@ class WarenkorbFragment : Fragment() {
         super.onStart()
         viewModel.hideNavigation(false)
         viewModel.hideToolbar(false)
+        viewModel.setSortimentTitle("Warenkorb")
     }
 
     override fun onCreateView(

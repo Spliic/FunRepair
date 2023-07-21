@@ -22,6 +22,7 @@ class WerkstattFragment : Fragment() {
         super.onStart()
         viewModel.hideNavigation(false)
         viewModel.hideToolbar(false)
+        viewModel.setSortimentTitle("Werkstatt")
     }
 
 

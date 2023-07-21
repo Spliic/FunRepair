@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.example.abschlussaufgabe.R
-import com.example.abschlussaufgabe.databinding.FragmentProfilBinding
 import com.example.abschlussaufgabe.databinding.FragmentSucheBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
@@ -22,6 +20,7 @@ class SucheFragment : Fragment() {
         super.onStart()
         viewModel.hideNavigation(false)
         viewModel.hideToolbar(false)
+        viewModel.setSortimentTitle("Suche")
     }
 
     override fun onCreateView(
@@ -31,6 +30,5 @@ class SucheFragment : Fragment() {
         binding = FragmentSucheBinding.inflate(inflater,container,false)
         return binding.root
     }
-
 
 }

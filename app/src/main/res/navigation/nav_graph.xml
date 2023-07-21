@@ -69,4 +69,16 @@
             android:id="@+id/action_profilFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/sucheFragment"
+        android:name="com.example.abschlussaufgabe.ui.SucheFragment"
+        android:label="SucheFragment" />
+    <fragment
+        android:id="@+id/warenkorbFragment"
+        android:name="com.example.abschlussaufgabe.ui.WarenkorbFragment"
+        android:label="WarenkorbFragment" />
+    <fragment
+        android:id="@+id/werkstattFragment"
+        android:name="com.example.abschlussaufgabe.ui.WerkstattFragment"
+        android:label="WerkstattFragment" />
 </navigation>
