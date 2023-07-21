@@ -44,7 +44,6 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -57,6 +56,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
         }
 
+
+
+
+
         viewModel.ersatzteilList.observe(viewLifecycleOwner){ersatzteilList ->
             binding.rvNewitem.adapter = KategorieAdapter(ersatzteilList,viewModel)
 
@@ -65,14 +68,19 @@ class HomeFragment : Fragment() {
 
         binding.cvErsatzteile.setOnClickListener {
             binding.rvNewitem.adapter = KategorieAdapter(viewModel.ersatzteilList.value!!,viewModel)
+            viewModel.setSortimentTitle("Ersatzteile")
+
+
         }
 
         binding.cvWerkzeug.setOnClickListener {
             binding.rvNewitem.adapter = KategorieAdapter(viewModel.werkzeugList.value!!,viewModel)
+            viewModel.setSortimentTitle("Werkzeug")
         }
 
         binding.cvAnleitung.setOnClickListener {
             binding.rvNewitem.adapter = KategorieAdapter(viewModel.anleitungList.value!!,viewModel)
+            viewModel.setSortimentTitle("Anleitung")
         }
 
     }

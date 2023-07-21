@@ -42,6 +42,7 @@ class KategorieAdapter(
 
             viewModel.setSortimentList(getCategoryList(kategorie))
             holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSortimentFragment(kategorie.artikelBezeichnung))
+
         }
     }
 

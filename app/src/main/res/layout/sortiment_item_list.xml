@@ -10,6 +10,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mcv_item"
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
         android:backgroundTint="@color/appcolor"
         android:layout_height="wrap_content">
 
@@ -17,33 +18,48 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_element"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:background="@color/appcolor"
-            android:layout_margin="10dp">
+            android:layout_height="match_parent">
 
-
-            <ImageView
-                android:id="@+id/iv_item"
-                android:layout_width="169dp"
-                android:layout_height="160dp"
-                android:gravity="left"
-                android:src="@drawable/image2"
-                android:scaleType="fitXY"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewPP"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                 />
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/iv_item"
+                    android:layout_width="150dp"
+                    android:layout_height="140dp"
+                    android:gravity="left"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/image2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/tv_productname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
+                android:textSize="15sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/iv_item"
+                app:layout_constraintStart_toEndOf="@+id/cardViewPP"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/kit1" />
 
@@ -57,7 +73,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/iv_item"
+                app:layout_constraintStart_toEndOf="@+id/cardViewPP"
                 app:layout_constraintTop_toBottomOf="@+id/tv_productname"
                 tools:text="@string/kitprice1" />
 
@@ -66,14 +82,15 @@
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:ellipsize="end"
                 android:maxLines="4"
                 android:text="@string/kitdescription1"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.884"
-                app:layout_constraintStart_toEndOf="@+id/iv_item"
+                app:layout_constraintStart_toEndOf="@+id/cardViewPP"
                 app:layout_constraintTop_toBottomOf="@+id/tv_price" />
 
 

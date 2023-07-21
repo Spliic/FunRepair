@@ -26,6 +26,7 @@ class SortimentFragment : Fragment() {
         viewModel.hideNavigation(false)
         viewModel.hideToolbar(false)
 
+
     }
 
 
@@ -33,14 +34,13 @@ class SortimentFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         /**
          * Dieser Codeausschnitt in Kotlin überprüft, ob arguments einen Wert hat, und weist den String-Wert mit dem Schlüssel "unterkategorie" der Variablen unterkategorie zu
          */
         arguments?.let{
             unterkategorie = it.getString("unterkategorie")
         }
+
 
     }
 
@@ -52,6 +52,7 @@ class SortimentFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_sortiment,container,false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

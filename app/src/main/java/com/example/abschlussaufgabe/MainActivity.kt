@@ -32,6 +32,14 @@ class MainActivity : AppCompatActivity() {
         binding.cvToolbar.visibility = View.GONE
         binding.bottomNavigation.visibility = View.GONE
 
+
+        /**
+         * Hier Setzten wir Sobald wir auf das Item Klicken den Neuen Titel!
+         */
+        viewModel.sortimentTitel.observeForever {
+            binding.tvTitle.setText(it)
+        }
+
         /**
          *  Hier Observen wir vom Viewmodel und setzten die Sichtbarkeit und die Magins des Fragments.
          */
@@ -50,6 +58,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+        /**
+         * Hier Navigieren wir in der Botton Navigation Bar
+         */
         binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.NavHome ->{
@@ -58,18 +70,22 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.NavSuche ->{
                     replaceFragment(SucheFragment())
+                    viewModel.setSortimentTitle("Suche")
                     true
                 }
                 R.id.NavWarenkorb ->{
                     replaceFragment(WarenkorbFragment())
+                    viewModel.setSortimentTitle("Warenkorb")
                     true
                 }
                 R.id.NavPerson ->{
                     replaceFragment(ProfilFragment())
+                    viewModel.setSortimentTitle("Profil")
                     true
                 }
                 R.id.NavWerkstatt ->{
                     replaceFragment(WerkstattFragment())
+                    viewModel.setSortimentTitle("Werkstatt")
                     true
                 }
                 else -> {

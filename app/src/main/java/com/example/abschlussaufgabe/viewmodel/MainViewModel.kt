@@ -13,6 +13,21 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private val repository = AppRepository(SortimentDatabase.getDatabase(application))
 
 
+    /**
+     * Setze die Livedata für den titel
+     */
+    private val _sortimentTitel = MutableLiveData<String>()
+    val sortimentTitel: LiveData<String>
+        get() = _sortimentTitel
+
+
+    fun setSortimentTitle(titel: String){
+        _sortimentTitel.value = titel
+    }
+
+
+
+
 
     /**
      * Setze LiveData für ErsatzteilListe
@@ -74,13 +89,15 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
 
 
-    private val _currentFragment = MutableLiveData<String>()
+    /*private val _currentFragment = MutableLiveData<String>()
     val currentFragment: LiveData<String>
         get() = _currentFragment
 
     fun setCurrentFragment(currentFragment: String){
         _currentFragment.value = currentFragment
     }
+
+     */
 
     /**
      * Set live data value for _hideToolbar
@@ -95,5 +112,8 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     fun hideNavigation(hide:Boolean){
         _hideNavigation.value = hide
     }
+
+
+
 
 }
