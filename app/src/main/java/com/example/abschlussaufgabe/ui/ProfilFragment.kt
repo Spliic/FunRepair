@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -27,20 +28,31 @@ class ProfilFragment : Fragment() {
         viewModel.hideNavigation(false)
         viewModel.hideToolbar(false)
     }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.hideToolbar(false)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProfilBinding.inflate(inflater,container,false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        //TODO: Überprüfen der Auslogg Funktion
+
+
         binding.btnLogout2.setOnClickListener {
             Firebase.auth.signOut()
             findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())
+
         }
 
 

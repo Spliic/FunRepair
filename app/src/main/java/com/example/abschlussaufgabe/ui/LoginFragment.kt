@@ -45,6 +45,7 @@ class LoginFragment : Fragment() {
         override fun onResume() {
             super.onResume()
             viewModel.hideNavigation(true)
+            viewModel.hideToolbar(true)
         }
 
         /**
@@ -97,11 +98,13 @@ class LoginFragment : Fragment() {
                     "Bitte geben Sie eine Email Adresse an ",
                     Toast.LENGTH_LONG
                 ).show()
+                return
             }
 
             if (passwort.isEmpty()) {
                 Toast.makeText(this.context, "Bitte geben Sie ein Passwort ein", Toast.LENGTH_LONG)
                     .show()
+                return
             }
 
 

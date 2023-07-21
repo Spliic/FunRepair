@@ -1,6 +1,7 @@
 package com.example.abschlussaufgabe.viewmodel
 
 import android.app.Application
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,6 +12,17 @@ import com.example.abschlussaufgabe.data.db.SortimentDatabase
 class MainViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository = AppRepository(SortimentDatabase.getDatabase(application))
+
+
+    private val _fragmentManager = MutableLiveData<FragmentManager>()
+    val fragmentManager:LiveData<FragmentManager>
+        get() = _fragmentManager
+
+
+    fun setFragmentManager(fragmentManager : FragmentManager){
+        _fragmentManager.value = fragmentManager
+
+    }
 
 
     /**

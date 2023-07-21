@@ -69,10 +69,12 @@ class RegisterFragment : Fragment() {
     private fun register(email: String, passwort: String) {
         if (email.isEmpty()){
             Toast.makeText(this.context,"Bitte geben sie eine Email Adresse an", Toast.LENGTH_LONG).show()
+            return
         }
 
         if (passwort.isEmpty()){
             Toast.makeText(this.context,"Bitte geben Sie ein Passwort ein", Toast.LENGTH_LONG).show()
+            return
         }
 
         /**
