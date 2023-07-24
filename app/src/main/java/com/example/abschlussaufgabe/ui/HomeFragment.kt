@@ -50,6 +50,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+
+
         viewModel.ersatzteilList.observe(viewLifecycleOwner){ersatzteilList ->
             binding.rvNewitem.adapter = KategorieAdapter(ersatzteilList,viewModel)
 

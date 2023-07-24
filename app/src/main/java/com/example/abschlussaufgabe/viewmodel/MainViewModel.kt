@@ -38,9 +38,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     }
 
 
-
-
-
     /**
      * Setze LiveData für ErsatzteilListe
      */

@@ -59,9 +59,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.ivBackIcon.setOnClickListener {
 
-        }
 
 
         /**
