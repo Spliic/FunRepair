@@ -83,6 +83,7 @@ class HomeFragment : Fragment() {
             viewModel.setSortimentTitle("Anleitung")
         }
 
+
     }
 
 

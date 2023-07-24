@@ -6,7 +6,9 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.abschlussaufgabe.databinding.ActivityMainBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
@@ -55,6 +57,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 binding.bottomNavigation.visibility = View.GONE
             }
+        }
+
+        binding.ivBackIcon.setOnClickListener {
+
         }
 
 
