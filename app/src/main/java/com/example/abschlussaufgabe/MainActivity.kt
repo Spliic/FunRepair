@@ -60,12 +60,22 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
+        binding.ivBackIcon.setOnClickListener {
+            navController.navigateUp()
+        }
 
         /**
          * Hier Navigieren wir in der Botton Navigation Bar
          */
         val bottomNavigationBar = binding.bottomNavigation
+        bottomNavigationBar.setOnItemSelectedListener {
+            if (it.itemId == R.id.homeFragment){
+                navController.navigate(R.id.homeFragment)
+                 true
+            }
+            false
+        }
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.fragmentContainerView3.id) as NavHostFragment
         navController = navHostFragment.navController

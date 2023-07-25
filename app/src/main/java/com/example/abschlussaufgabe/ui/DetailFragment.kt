@@ -19,6 +19,12 @@ class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
 
 
+    private var artikelBezeichnung = ""
+    private var preis = 0
+    private var artikelBeschreibung = ""
+    private var bild = 0
+
+
     /**
      * Hier in der OnStart wird die HideNavigation & HideToolbar einblendet
      */
@@ -37,9 +43,27 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            artikelBezeichnung = it.getString("artikelbezeichnung").toString()
+            preis = it.getInt("preis")
+            artikelBeschreibung = it.getString("artikelbeschreibung").toString()
+            bild = it.getInt("bild")
+
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.ivDetail.setImageResource(bild)
+        binding.tvPrice.setText(preis)
+        binding.tvDescription.setText(artikelBeschreibung)
+        binding.tvProductname.setText(artikelBezeichnung)
+
+
+
 
 
 

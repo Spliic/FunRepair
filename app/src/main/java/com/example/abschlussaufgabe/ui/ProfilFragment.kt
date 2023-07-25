@@ -42,11 +42,6 @@ class ProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnLogout2.setOnClickListener {
-            Firebase.auth.signOut()
-            findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())
-        }
-
         binding.cvAbmelden.setOnClickListener {
             Firebase.auth.signOut()
             findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())

@@ -60,6 +60,18 @@
         <action
             android:id="@+id/action_detailFragment_to_sortimentFragment"
             app:destination="@id/sortimentFragment" />
+        <argument
+            android:name="artikelbezeichnung"
+            app:argType="string" />
+        <argument
+            android:name="preis"
+            app:argType="integer" />
+        <argument
+            android:name="artikelbeschreibung"
+            app:argType="string" />
+        <argument
+            android:name="bild"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/profilFragment"

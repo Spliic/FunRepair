@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
 import com.example.abschlussaufgabe.adapter.SortimentAdapter
 import com.example.abschlussaufgabe.databinding.FragmentSortimentBinding
@@ -63,5 +64,10 @@ class SortimentFragment : Fragment() {
          */
         val filteredSortiment = viewModel.completeSortimentList.filter {it.unterkategorie == unterkategorie}
         binding.rvSortiment.adapter = SortimentAdapter(filteredSortiment)
+
+
+
+
+
     }
 }
