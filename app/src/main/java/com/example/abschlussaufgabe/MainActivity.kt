@@ -60,6 +60,9 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        /**
+         * Hier navigieren wir an die Stelle zurück von der Wir gekommen sind über den Back Button
+         */
         binding.ivBackIcon.setOnClickListener {
             navController.navigateUp()
         }
@@ -75,7 +78,6 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.fragmentContainerView3.id) as NavHostFragment
         navController = navHostFragment.navController

@@ -1,5 +1,6 @@
 package com.example.abschlussaufgabe.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,7 +21,7 @@ class DetailFragment : Fragment() {
 
 
     private var artikelBezeichnung = ""
-    private var preis = 0
+    private var preis = 0.0f
     private var artikelBeschreibung = ""
     private var bild = 0
 
@@ -47,18 +48,19 @@ class DetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             artikelBezeichnung = it.getString("artikelbezeichnung").toString()
-            preis = it.getInt("preis")
+            preis = it.getFloat("preis")
             artikelBeschreibung = it.getString("artikelbeschreibung").toString()
             bild = it.getInt("bild")
 
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.ivDetail.setImageResource(bild)
-        binding.tvPrice.setText(preis)
+        binding.tvPrice.setText("$preis €")
         binding.tvDescription.setText(artikelBeschreibung)
         binding.tvProductname.setText(artikelBezeichnung)
 

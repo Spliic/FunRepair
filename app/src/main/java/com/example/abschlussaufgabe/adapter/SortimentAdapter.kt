@@ -3,9 +3,12 @@ package com.example.abschlussaufgabe.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.abschlussaufgabe.data.datamodel.Artikel
 import com.example.abschlussaufgabe.databinding.SortimentItemListBinding
+import com.example.abschlussaufgabe.ui.SortimentFragmentDirections
 
 
 class SortimentAdapter(
@@ -32,10 +35,21 @@ class SortimentAdapter(
 
         val sortiment = datasource[position]
 
+        /**
+         * Hier werden die Argumente gebindet und gesetzt.
+         */
         holder.binding.ivItem.setImageResource(sortiment.bild)
         holder.binding.tvDescription.setText(sortiment.artikelBeschreibung)
         holder.binding.tvProductname.setText(sortiment.artikelBezeichnung)
-        holder.binding.tvPrice.setText(sortiment.preis.toString())
+        holder.binding.tvPrice.setText(sortiment.preis.toString()+ " €")
+
+
+        /**
+         * Hier wird von der CardView navigiert zum DetailFragment mit den Argumenten die benötigt werden.
+         */
+        holder.binding.mcvItem.setOnClickListener {
+            holder.itemView.findNavController().navigate(SortimentFragmentDirections.actionSortimentFragmentToDetailFragment(sortiment.artikelBezeichnung,sortiment.preis.toFloat(),sortiment.artikelBeschreibung,sortiment.bild))
+        }
     }
 
 

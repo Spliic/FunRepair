@@ -65,7 +65,7 @@
             app:argType="string" />
         <argument
             android:name="preis"
-            app:argType="integer" />
+            app:argType="float" />
         <argument
             android:name="artikelbeschreibung"
             app:argType="string" />
