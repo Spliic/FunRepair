@@ -46,6 +46,11 @@ class ProfilFragment : Fragment() {
             Firebase.auth.signOut()
             findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())
         }
+
+        binding.cvAbmelden.setOnClickListener {
+            Firebase.auth.signOut()
+            findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())
+        }
     }
 
 }
