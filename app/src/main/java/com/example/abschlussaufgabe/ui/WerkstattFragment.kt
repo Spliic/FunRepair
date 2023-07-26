@@ -5,11 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.activityViewModels
 import com.example.abschlussaufgabe.R
 import com.example.abschlussaufgabe.databinding.FragmentSucheBinding
 import com.example.abschlussaufgabe.databinding.FragmentWerkstattBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 
 class WerkstattFragment : Fragment() {
@@ -35,4 +41,12 @@ class WerkstattFragment : Fragment() {
     }
 
 
+
+    /*
+    val filteredSortiment = viewModel.completeSortimentList.filter {it. neues atribut > 0 }
+        binding.rvSortiment.adapter = WarenkorbAdapter(filteredSortiment)
+     */
+
+
 }
+

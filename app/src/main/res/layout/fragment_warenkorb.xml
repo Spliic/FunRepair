@@ -1,22 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/appcolor"
         tools:context=".ui.WarenkorbFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sortiment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Warenkorb Fragment" />
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="100dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/warenkorb_list_item"/>
 
-    </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_checkout"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Checkout"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_adresse"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Adresse"
+            android:textStyle="bold"
+            android:textColor="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/iv_clouddone2"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintStart_toEndOf="@+id/iv_clouddone1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_zahlen"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:text="Zahlen"
+            android:textColor="@color/colourButton"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_clouddone1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/baseline_cloud_done_24"
+            app:layout_constraintStart_toEndOf="@+id/tv_checkout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_clouddone2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/baseline_cloud_done_24"
+            app:layout_constraintEnd_toStartOf="@+id/tv_zahlen"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="16dp"
+            android:text="Preis: 14,99€"
+            android:textSize="20sp"
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintHorizontal_bias="0.373"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="16dp"
+            android:text="Einkaufen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/tv_adresse"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toEndOf="@+id/iv_clouddone1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/iv_clouddone1"
+            app:layout_constraintStart_toEndOf="@+id/tv_checkout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/tv_zahlen"
+            app:layout_constraintStart_toEndOf="@+id/iv_clouddone2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/iv_clouddone2"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toEndOf="@+id/tv_adresse"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
