@@ -96,9 +96,6 @@ class MainActivity : AppCompatActivity() {
 
         setupWithNavController(bottomNavigationBar, navController)
 
-
-
-
     }
 
 }

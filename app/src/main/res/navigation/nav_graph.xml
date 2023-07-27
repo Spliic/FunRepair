@@ -92,10 +92,14 @@
     <fragment
         android:id="@+id/werkstattFragment"
         android:name="com.example.abschlussaufgabe.ui.WerkstattFragment"
-        android:label="WerkstattFragment" />
+        android:label="WerkstattFragment" >
+        <action
+            android:id="@+id/action_werkstattFragment_to_werkstattDetailFragment"
+            app:destination="@id/werkstattDetailFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/mapsFragment"
-        android:name="com.example.abschlussaufgabe.ui.MapsFragment"
-        android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" />
+        android:id="@+id/werkstattDetailFragment"
+        android:name="com.example.abschlussaufgabe.ui.WerkstattDetailFragment"
+        android:label="fragment_werkstatt_detail"
+        tools:layout="@layout/fragment_werkstatt_detail" />
 </navigation>
