@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appcolor"
+        tools:context=".ui.OnboardOneFragment">
+
+
+        <TextView
+            android:id="@+id/tv_onBoardoneOben"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="48dp"
+            android:gravity="center"
+            android:text="@string/onboardText"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/iv_book"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_onBoardOne"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Zugang zu Anleitungen und Wartungsinformationen vom Hersteller"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_book" />
+
+        <ImageView
+            android:id="@+id/iv_book"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/baseline_menu_book_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_blueRound"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/baseline_brightness_1_24"
+            app:layout_constraintEnd_toStartOf="@+id/iv_greyRound"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_onBoardOne" />
+
+        <ImageView
+            android:id="@+id/iv_greyRound"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/baseline_brightness_grey"
+            app:layout_constraintEnd_toStartOf="@+id/iv_greyRound2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_blueRound"
+            app:layout_constraintTop_toBottomOf="@+id/tv_onBoardOne" />
+
+        <ImageView
+            android:id="@+id/iv_greyRound2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="150dp"
+            android:src="@drawable/baseline_brightness_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_greyRound"
+            app:layout_constraintTop_toBottomOf="@+id/tv_onBoardOne" />
+
+
+        
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

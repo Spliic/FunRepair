@@ -80,4 +80,7 @@
     <string name="ersatzteilakkupreis1">39,95€</string>
     <string name="ersatzteilakkudescription1">Dieser iPhone X Ersatzakku ist genau das Richtige, um dein iPhone wieder zum Laufen zu bringen.</string>
     <string name="warenkorblegen">In Den Warenkorb</string>
+    <string name="onboardText">Das Recht auf Reparatur ist <b>Gegenstand einer globalen Bewegung,</b> <b>die sich für die Grundvorrausetzungen</b> der Reparatur einsetzt</string>
+    <string name="onBoardTwo">Zugang zu Ersatzteilen und Werkzeugen, die wir für die Reparatur unserer Sachen brauchen</string>
+    <string name="onBoardThree">Zugang zur Anzeige von Werkstatt Shops, um dein Smartphone von Professionellen Menschen Reparieren zu lassen.</string>
 </resources>

@@ -14,5 +14,5 @@ data class Artikel(
     var bild: Int,
     var anleitungPdf: String,
     var kategorie: String,
-    var unterkategorie: String
+    var unterkategorie: String,
 )

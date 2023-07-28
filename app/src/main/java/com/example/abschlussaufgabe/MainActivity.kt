@@ -13,7 +13,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.viewpager2.widget.ViewPager2
+import com.example.abschlussaufgabe.adapter.ViewPagerAdapter
 import com.example.abschlussaufgabe.databinding.ActivityMainBinding
+import com.example.abschlussaufgabe.ui.OnboardOneFragment
+import com.example.abschlussaufgabe.ui.OnboardThreeFragment
+import com.example.abschlussaufgabe.ui.OnboardTwoFragment
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -26,8 +31,6 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels()
 
     private lateinit var navController: NavController
-
-
 
 
 
@@ -95,6 +98,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         setupWithNavController(bottomNavigationBar, navController)
+
 
     }
 

@@ -80,6 +80,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         _anleitungList.value = repository.anleitungList.value
         _werkzeugList.value = repository.werkzeugList.value
         _ersatzteilList.value = repository.ersatzteilList.value
+
     }
 
     /**

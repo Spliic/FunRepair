@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.abschlussaufgabe.R
 
 import com.example.abschlussaufgabe.databinding.FragmentWerkstattBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
@@ -19,13 +21,13 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 
+
 class WerkstattFragment : Fragment(), OnMapReadyCallback {
 
     private val viewModel: MainViewModel by activityViewModels()
     private lateinit var binding: FragmentWerkstattBinding
 
     private lateinit var googleMap: GoogleMap
-
 
 
 
@@ -56,12 +58,11 @@ class WerkstattFragment : Fragment(), OnMapReadyCallback {
             )
             googleMap.uiSettings.isZoomControlsEnabled = true
 
-
-
-
         }
         return binding.root
     }
+
+
 
 
 
