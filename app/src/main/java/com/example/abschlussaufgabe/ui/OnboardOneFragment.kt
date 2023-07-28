@@ -28,7 +28,14 @@ class OnboardOneFragment : Fragment() {
             findNavController().navigate(OnboardOneFragmentDirections.actionOnboardOneFragmentToOnboardTwoFragment())
         },3000)
 
+
+
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
     }
 
 

@@ -117,6 +117,9 @@
         <action
             android:id="@+id/action_onboardTwoFragment_to_onboardThreeFragment"
             app:destination="@id/onboardThreeFragment" />
+        <action
+            android:id="@+id/action_onboardTwoFragment_to_onboardOneFragment"
+            app:destination="@id/onboardOneFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardThreeFragment"
@@ -125,5 +128,8 @@
         <action
             android:id="@+id/action_onboardThreeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_onboardThreeFragment_to_onboardTwoFragment"
+            app:destination="@id/onboardTwoFragment" />
     </fragment>
 </navigation>

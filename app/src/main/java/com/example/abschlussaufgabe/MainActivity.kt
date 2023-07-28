@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.viewpager2.widget.ViewPager2
@@ -99,15 +100,8 @@ class MainActivity : AppCompatActivity() {
 
         setupWithNavController(bottomNavigationBar, navController)
 
-
-       /*
-       val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
-
-        binding.viewPager.adapter = viewPagerAdapter
-
-        */
-
-
     }
+
+
 
 }
