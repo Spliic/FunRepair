@@ -100,6 +100,14 @@ class MainActivity : AppCompatActivity() {
         setupWithNavController(bottomNavigationBar, navController)
 
 
+       /*
+       val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+
+        binding.viewPager.adapter = viewPagerAdapter
+
+        */
+
+
     }
 
 }
