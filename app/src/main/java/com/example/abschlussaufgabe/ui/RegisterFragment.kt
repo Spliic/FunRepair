@@ -25,6 +25,7 @@ class RegisterFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
 
+
     /**
      * die OnCreateView zeigt das UI Element an
      */
@@ -59,6 +60,7 @@ class RegisterFragment : Fragment() {
 
         binding.duhasteinacc.setOnClickListener {
             findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
+
         }
     }
 

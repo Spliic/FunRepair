@@ -14,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.abschlussaufgabe.adapter.ViewPagerAdapter
 import com.example.abschlussaufgabe.databinding.ActivityMainBinding
@@ -26,6 +27,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -99,6 +101,21 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         setupWithNavController(bottomNavigationBar, navController)
+
+
+
+        /*val viewPager = findViewById<ViewPager>(R.id.vp_swipe)
+
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+
+        viewPager.adapter = adapter
+
+         */
+
+
+
+
+
 
     }
 

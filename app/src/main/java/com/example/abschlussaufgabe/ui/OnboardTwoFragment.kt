@@ -30,6 +30,8 @@ class OnboardTwoFragment : Fragment() {
             findNavController().navigate(OnboardTwoFragmentDirections.actionOnboardTwoFragmentToOnboardThreeFragment())
         },3000)
 
+
+
         return binding.root
     }
 

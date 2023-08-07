@@ -65,10 +65,6 @@ class DetailFragment : Fragment() {
         binding.tvProductname.setText(artikelBezeichnung)
 
 
-
-
-
-
     }
 
 }
