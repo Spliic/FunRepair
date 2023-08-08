@@ -14,7 +14,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private val repository = AppRepository(SortimentDatabase.getDatabase(application))
 
 
-    private val _fragmentManager = MutableLiveData<FragmentManager>()
+    /*private val _fragmentManager = MutableLiveData<FragmentManager>()
     val fragmentManager:LiveData<FragmentManager>
         get() = _fragmentManager
 
@@ -24,6 +24,8 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     }
 
+     */
+
 
     /**
      * Setze die Livedata für den titel
@@ -31,7 +33,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private val _sortimentTitel = MutableLiveData<String>()
     val sortimentTitel: LiveData<String>
         get() = _sortimentTitel
-
 
     fun setSortimentTitle(titel: String){
         _sortimentTitel.value = titel
@@ -62,6 +63,13 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         get() = _anleitungList
 
 
+    /**
+     * Hier wird eine LiveData-Liste von Artikel-Objekten verwaltet:
+        _sortimentList ist eine private LiveData-Liste.
+        sortimentList ist eine öffentliche LiveData-Liste, die auf _sortimentList verweist.
+        completeSortimentList kommt direkt vom Repository.
+        setSortimentList aktualisiert _sortimentList mit einer neuen Liste.
+     */
 
     private val _sortimentList = MutableLiveData<List<Artikel>>()
     val sortimentList: LiveData<List<Artikel>>
@@ -74,7 +82,9 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     }
 
 
-
+    /**
+     * Daten aus Repository werden in LiveData-Variablen initialisiert.
+     */
     init {
         repository.loadData()
         _anleitungList.value = repository.anleitungList.value
@@ -97,17 +107,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     val hideNavigation: LiveData<Boolean>
         get() = _hideNavigation
 
-
-
-    /*private val _currentFragment = MutableLiveData<String>()
-    val currentFragment: LiveData<String>
-        get() = _currentFragment
-
-    fun setCurrentFragment(currentFragment: String){
-        _currentFragment.value = currentFragment
-    }
-
-     */
 
     /**
      * Set live data value for _hideToolbar

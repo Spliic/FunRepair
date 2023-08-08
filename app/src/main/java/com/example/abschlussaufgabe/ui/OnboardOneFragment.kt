@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
-import com.example.abschlussaufgabe.adapter.ViewPagerAdapter
 import com.example.abschlussaufgabe.databinding.FragmentOnboardOneBinding
 
 class OnboardOneFragment : Fragment() {

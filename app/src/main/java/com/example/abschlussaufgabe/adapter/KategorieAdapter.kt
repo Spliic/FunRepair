@@ -46,6 +46,10 @@ class KategorieAdapter(
         }
     }
 
+
+    /**
+     * Die Funktion getCategoryList erstellt eine Liste von Artikel-Objekten, die zur gleichen unterkategorie wie das gegebene werkzeug gehören.
+     */
     private fun getCategoryList(werkzeug: Artikel): List<Artikel>{
         val kategorieList = mutableListOf<Artikel>()
 

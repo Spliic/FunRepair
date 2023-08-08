@@ -26,8 +26,6 @@ class SortimentFragment : Fragment() {
         super.onStart()
         viewModel.hideNavigation(false)
         viewModel.hideToolbar(false)
-
-
     }
 
 
@@ -41,8 +39,6 @@ class SortimentFragment : Fragment() {
         arguments?.let{
             unterkategorie = it.getString("unterkategorie")
         }
-
-
     }
 
 
@@ -64,10 +60,6 @@ class SortimentFragment : Fragment() {
          */
         val filteredSortiment = viewModel.completeSortimentList.filter {it.unterkategorie == unterkategorie}
         binding.rvSortiment.adapter = SortimentAdapter(filteredSortiment)
-
-
-
-
 
     }
 }

@@ -1,33 +1,16 @@
 package com.example.abschlussaufgabe
 
-import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.NavigationUI.setupWithNavController
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
-import com.example.abschlussaufgabe.adapter.ViewPagerAdapter
 import com.example.abschlussaufgabe.databinding.ActivityMainBinding
-import com.example.abschlussaufgabe.ui.OnboardOneFragment
-import com.example.abschlussaufgabe.ui.OnboardThreeFragment
-import com.example.abschlussaufgabe.ui.OnboardTwoFragment
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.material.tabs.TabLayout
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -96,26 +79,15 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+
+        /**
+         * Code verwendet Navigation Component für App-Navigation. NavHostFragment erhält NavController aus supportFragmentManager. setupWithNavController verbindet mit unterer Navigationsleiste.
+         */
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.fragmentContainerView3.id) as NavHostFragment
         navController = navHostFragment.navController
 
         setupWithNavController(bottomNavigationBar, navController)
-
-
-
-        /*val viewPager = findViewById<ViewPager>(R.id.vp_swipe)
-
-        val adapter = ViewPagerAdapter(supportFragmentManager)
-
-        viewPager.adapter = adapter
-
-         */
-
-
-
-
-
 
     }
 
