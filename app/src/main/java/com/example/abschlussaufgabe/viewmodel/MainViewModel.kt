@@ -1,31 +1,26 @@
 package com.example.abschlussaufgabe.viewmodel
 
 import android.app.Application
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.example.abschlussaufgabe.data.apiServices.WetterApi
 import com.example.abschlussaufgabe.data.datamodel.Artikel
+import com.example.abschlussaufgabe.data.datamodel.CurrentWeather
 import com.example.abschlussaufgabe.data.db.AppRepository
 import com.example.abschlussaufgabe.data.db.SortimentDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application): AndroidViewModel(application) {
 
-    private val repository = AppRepository(SortimentDatabase.getDatabase(application))
+    private val repository = AppRepository(SortimentDatabase.getDatabase(application),WetterApi)
 
 
-    /*private val _fragmentManager = MutableLiveData<FragmentManager>()
-    val fragmentManager:LiveData<FragmentManager>
-        get() = _fragmentManager
-
-
-    fun setFragmentManager(fragmentManager : FragmentManager){
-        _fragmentManager.value = fragmentManager
-
-    }
-
-     */
-
+    private val _currentWetter = MutableLiveData<CurrentWeather>()
+        val currentWetter: LiveData<CurrentWeather>
+            get() = _currentWetter
 
     /**
      * Setze die Livedata für den titel
@@ -86,11 +81,12 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
      * Daten aus Repository werden in LiveData-Variablen initialisiert.
      */
     init {
+        getWetter()
         repository.loadData()
         _anleitungList.value = repository.anleitungList.value
         _werkzeugList.value = repository.werkzeugList.value
         _ersatzteilList.value = repository.ersatzteilList.value
-
+        _currentWetter.value = repository.currentWetter.value
     }
 
     /**
@@ -120,6 +116,13 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
      */
     fun hideNavigation(hide:Boolean){
         _hideNavigation.value = hide
+    }
+
+    fun getWetter(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.getWetter()
+            _currentWetter.postValue(repository.currentWetter.value)
+        }
     }
 
 

@@ -3,13 +3,27 @@ package com.example.abschlussaufgabe.data.db
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.room.Database
 import com.example.abschlussaufgabe.R
+import com.example.abschlussaufgabe.data.apiServices.WetterApi
 import com.example.abschlussaufgabe.data.datamodel.Artikel
+import com.example.abschlussaufgabe.data.datamodel.CurrentWeather
 import java.lang.Exception
 
 
-class AppRepository(private val database: SortimentDatabase) {
+class AppRepository(private val database: SortimentDatabase, private val wetterApi: WetterApi) {
+
+    private val _currentWetter = MutableLiveData<CurrentWeather>()
+        val currentWetter: LiveData<CurrentWeather>
+            get() = _currentWetter
+
+    suspend fun getWetter(){
+        try {
+            _currentWetter.postValue(wetterApi.retrofitService.getWetter())
+            Log.e("AppRepository","${_currentWetter.value}")
+        } catch (e: Exception){
+            Log.e("AppRepository","Error Weather API DATA: ${e.message}")
+        }
+    }
 
 
     /**

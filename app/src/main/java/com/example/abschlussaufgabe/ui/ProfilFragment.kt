@@ -46,6 +46,11 @@ class ProfilFragment : Fragment() {
             Firebase.auth.signOut()
             findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())
         }
+
+        binding.cvWetter.setOnClickListener {
+            binding.wetterApi.text = viewModel.currentWetter.value!!.hourly.apparent_temperature[0].toString() + "C"
+        }
+
     }
 
 }

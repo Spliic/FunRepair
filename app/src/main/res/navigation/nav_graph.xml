@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.abschlussaufgabe.ui.LoginFragment"
@@ -80,6 +80,9 @@
         <action
             android:id="@+id/action_profilFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profilFragment_to_wetterFragment"
+            app:destination="@id/wetterFragment" />
     </fragment>
     <fragment
         android:id="@+id/sucheFragment"
@@ -132,4 +135,9 @@
             android:id="@+id/action_onboardThreeFragment_to_onboardTwoFragment"
             app:destination="@id/onboardTwoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/wetterFragment"
+        android:name="com.example.abschlussaufgabe.ui.WetterFragment"
+        android:label="fragment_wetter"
+        tools:layout="@layout/fragment_wetter" />
 </navigation>
