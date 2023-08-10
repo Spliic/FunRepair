@@ -230,7 +230,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_wetter"
             android:layout_width="320dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -252,16 +252,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
 
-                <TextView
-                    android:id="@+id/tv_Wetter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="Wetter Klick-Mich"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/icon_wetter"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_wetter"
@@ -291,6 +281,22 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/icon_wetter"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/text_input_wetter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="hint" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -440,16 +446,17 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/wetterApi"
+            android:id="@+id/wetterApixml"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text=""
+            android:layout_marginTop="30dp"
             android:textSize="50dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cv_wetter" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

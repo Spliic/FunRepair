@@ -8,12 +8,16 @@ import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 const val BASE_URL =
-    "https://api.open-meteo.com/v1/"
+    "http://api.weatherstack.com/"
+
+const val API_KEY = "007565fe37139854dccd3238d06ef89d"
 
 private val httpClient: OkHttpClient = OkHttpClient.Builder().addInterceptor { client ->
     val request: Request = client.request().newBuilder()
+        //.addHeader("Authorization","access_key $API_KEY")
         .build()
     client.proceed(request)
 }.build()
@@ -29,7 +33,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface WetterApiService{
-    @GET("forecast?latitude=34.0522&longitude=-118.2437&hourly=apparent_temperature&timezone=GMT&forecast_days=1")
+    @GET("current?access_key=007565fe37139854dccd3238d06ef89d&query=berlin")
     suspend fun getWetter(): CurrentWeather
 }
 

@@ -18,8 +18,8 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
 
     suspend fun getWetter(){
         try {
-            _currentWetter.postValue(wetterApi.retrofitService.getWetter())
-            Log.e("AppRepository","${_currentWetter.value}")
+            var test = wetterApi.retrofitService.getWetter()
+            _currentWetter.value = test
         } catch (e: Exception){
             Log.e("AppRepository","Error Weather API DATA: ${e.message}")
         }

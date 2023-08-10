@@ -1,6 +1,7 @@
 package com.example.abschlussaufgabe.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -119,7 +120,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     }
 
     fun getWetter(){
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             repository.getWetter()
             _currentWetter.postValue(repository.currentWetter.value)
         }

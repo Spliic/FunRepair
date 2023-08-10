@@ -47,8 +47,10 @@ class ProfilFragment : Fragment() {
             findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())
         }
 
-        binding.cvWetter.setOnClickListener {
-            binding.wetterApi.text = viewModel.currentWetter.value!!.hourly.apparent_temperature[0].toString() + "C"
+        binding.btnWetter.setOnClickListener {
+            viewModel.currentWetter.observe(viewLifecycleOwner) {
+                binding.wetterApixml.text = it.current.temperature.toString() + "° C"
+            }
         }
 
     }
