@@ -11,12 +11,15 @@ import com.example.abschlussaufgabe.data.datamodel.Artikel
 import com.example.abschlussaufgabe.data.datamodel.CurrentWeather
 import com.example.abschlussaufgabe.data.db.AppRepository
 import com.example.abschlussaufgabe.data.db.SortimentDatabase
-import kotlinx.coroutines.Dispatchers
+import com.example.abschlussaufgabe.data.db.getDatabase
 import kotlinx.coroutines.launch
+
 
 class MainViewModel(application: Application): AndroidViewModel(application) {
 
-    private val repository = AppRepository(SortimentDatabase.getDatabase(application),WetterApi)
+
+
+    private val repository = AppRepository(getDatabase(application),WetterApi)
 
 
     private val _currentWetter = MutableLiveData<CurrentWeather>()
@@ -75,6 +78,13 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     fun setSortimentList(liste: List<Artikel>){
         _sortimentList.value = liste
+    }
+
+
+    fun updateArtikel(artikel: Artikel){
+        viewModelScope.launch {
+            repository.editArtikel(artikel)
+        }
     }
 
 

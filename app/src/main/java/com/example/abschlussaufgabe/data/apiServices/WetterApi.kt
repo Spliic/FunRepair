@@ -33,7 +33,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface WetterApiService{
-    @GET("current?access_key=007565fe37139854dccd3238d06ef89d&query=berlin")
+    @GET("current?access_key=007565fe37139854dccd3238d06ef89d&query=athen")
     suspend fun getWetter(): CurrentWeather
 }
 

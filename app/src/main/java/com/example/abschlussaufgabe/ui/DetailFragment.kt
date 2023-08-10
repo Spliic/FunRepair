@@ -2,6 +2,7 @@ package com.example.abschlussaufgabe.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -63,6 +64,13 @@ class DetailFragment : Fragment() {
         binding.tvPrice.setText("$preis €")
         binding.tvDescription.setText(artikelBeschreibung)
         binding.tvProductname.setText(artikelBezeichnung)
+
+        binding.btnWarenkorb.setOnClickListener {
+            val warenkorbFilter = viewModel.completeSortimentList.filter {it.bild == bild}
+            val artikel = warenkorbFilter.first()
+            artikel.artikelBeschreibung = "HALLOOO TEST"
+            viewModel.updateArtikel(artikel)
+        }
 
 
     }

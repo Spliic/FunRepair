@@ -90,6 +90,11 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
     }
 
 
+    fun editArtikel(artikel: Artikel){
+        database.artikelDao.update(artikel)
+    }
+
+
     /**
      * Sortiment was in die Datenbank befüllt wird.
      */

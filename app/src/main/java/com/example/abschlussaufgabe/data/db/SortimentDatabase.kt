@@ -13,12 +13,11 @@ abstract class SortimentDatabase: RoomDatabase() {
 
     abstract val artikelDao: ArtikelDao
     abstract val bewertungDao: BewertungDao
+}
 
-    companion object {
-        @Volatile
         private var INSTANCE: SortimentDatabase?= null
         fun getDatabase(context: Context):SortimentDatabase{
-            synchronized(this){
+            synchronized(SortimentDatabase::class.java){
                 var instance = INSTANCE
                 if (instance == null){
                     instance = Room.databaseBuilder(
@@ -30,5 +29,3 @@ abstract class SortimentDatabase: RoomDatabase() {
                 return instance
             }
         }
-    }
-}
