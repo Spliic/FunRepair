@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import com.example.abschlussaufgabe.R
+import com.example.abschlussaufgabe.adapter.SortimentAdapter
+import com.example.abschlussaufgabe.adapter.WarenkorbAdapter
 import com.example.abschlussaufgabe.databinding.FragmentSucheBinding
 import com.example.abschlussaufgabe.databinding.FragmentWarenkorbBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
@@ -39,8 +41,12 @@ class WarenkorbFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val filteredSortiment = viewModel.completeSortimentList.filter {it.istImWarenkorb == true}
+        binding.rvSortiment.adapter = WarenkorbAdapter(filteredSortiment)
+
 
     }
+
 
 
 }

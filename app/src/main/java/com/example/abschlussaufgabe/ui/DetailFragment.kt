@@ -68,7 +68,7 @@ class DetailFragment : Fragment() {
         binding.btnWarenkorb.setOnClickListener {
             val warenkorbFilter = viewModel.completeSortimentList.filter {it.bild == bild}
             val artikel = warenkorbFilter.first()
-            artikel.artikelBeschreibung = "HALLOOO TEST"
+            artikel.istImWarenkorb = true
             viewModel.updateArtikel(artikel)
         }
 

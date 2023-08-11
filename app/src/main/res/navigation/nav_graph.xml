@@ -72,6 +72,9 @@
         <argument
             android:name="bild"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_detailFragment_to_warenkorbFragment"
+            app:destination="@id/warenkorbFragment" />
     </fragment>
     <fragment
         android:id="@+id/profilFragment"

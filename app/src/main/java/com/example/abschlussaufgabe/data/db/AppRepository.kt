@@ -12,6 +12,10 @@ import java.lang.Exception
 
 class AppRepository(private val database: SortimentDatabase, private val wetterApi: WetterApi) {
 
+    /**
+     * Der Code verwaltet aktuelle Wetterdaten mithilfe von LiveData und Retrofit.
+     * Die Funktion getWetter ruft Wetterdaten ab und speichert sie in _currentWetter, während Fehler abgefangen und protokolliert werden.
+     */
     private val _currentWetter = MutableLiveData<CurrentWeather>()
         val currentWetter: LiveData<CurrentWeather>
             get() = _currentWetter
@@ -62,7 +66,7 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
      * Im Konstruktor werden alle vorhandenen Daten in der Datenbanktabelle gelöscht und Beispiel-Daten eingefügt.
      */
     init {
-        database.artikelDao.deleteAll()
+        //database.artikelDao.deleteAll()
         exampleData()
     }
 
@@ -91,7 +95,7 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
 
 
     fun editArtikel(artikel: Artikel){
-        database.artikelDao.update(artikel)
+        database.artikelDao.updateArtikel(artikel)
     }
 
 

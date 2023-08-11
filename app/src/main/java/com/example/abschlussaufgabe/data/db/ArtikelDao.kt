@@ -29,5 +29,5 @@ interface ArtikelDao {
     fun getCount():Int
 
     @Update
-    fun update(artikel: Artikel)
+    fun updateArtikel(artikel: Artikel)
 }

@@ -82,16 +82,7 @@ class WerkstattFragment : Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(p0: GoogleMap) {
-
-
+        TODO("Not yet implemented")
     }
-
-
-    /*
-    val filteredSortiment = viewModel.completeSortimentList.filter {it. neues atribut > 0 }
-        binding.rvSortiment.adapter = WarenkorbAdapter(filteredSortiment)
-     */
-
-
 }
 
