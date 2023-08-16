@@ -55,6 +55,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_ersatzteile"
+                android:backgroundTint="@color/appcolor"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="15dp"
@@ -66,12 +67,15 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/image2" />
+                    android:src="@drawable/baseline_install_mobile_24" />
+
+
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_werkzeug"
+                android:backgroundTint="@color/appcolor"
                 android:layout_width="110dp"
                 app:cardCornerRadius="10dp"
                 android:layout_height="110dp"
@@ -84,13 +88,14 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/image1"/>
+                    android:src="@drawable/baseline_handyman_24"/>
 
             </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_anleitung"
+                android:backgroundTint="@color/appcolor"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 app:cardCornerRadius="10dp"
@@ -102,7 +107,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/image3"/>
+                    android:src="@drawable/baseline_newspaper_24"/>
 
 
             </androidx.cardview.widget.CardView>

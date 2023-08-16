@@ -22,6 +22,18 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private val repository = AppRepository(getDatabase(application),WetterApi)
 
 
+
+
+
+    fun updatePrices(price: Double){
+        _allPrices.value = _allPrices.value!! + price
+    }
+
+    private val _allPrices = MutableLiveData(0.0)
+        val allPrices: LiveData<Double>
+            get() = _allPrices
+
+
     private val _currentWetter = MutableLiveData<CurrentWeather>()
         val currentWetter: LiveData<CurrentWeather>
             get() = _currentWetter

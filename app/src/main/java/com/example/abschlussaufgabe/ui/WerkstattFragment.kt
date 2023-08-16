@@ -27,7 +27,6 @@ class WerkstattFragment : Fragment(), OnMapReadyCallback {
     private val viewModel: MainViewModel by activityViewModels()
     private lateinit var binding: FragmentWerkstattBinding
 
-    private lateinit var googleMap: GoogleMap
 
 
 
@@ -48,12 +47,15 @@ class WerkstattFragment : Fragment(), OnMapReadyCallback {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWerkstattBinding.inflate(inflater,container,false)
+
+        var latlng = LatLng (53.65432, 10.09070)
+        var zoomFromMap = 16f
         binding.map.onCreate(savedInstanceState)
         binding.map.getMapAsync{googleMap ->
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(53.65432,10.09070),16f))
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latlng,zoomFromMap))
             googleMap.addMarker(
                 MarkerOptions()
-                    .position(LatLng(53.65432,10.09070))
+                    .position(latlng)
                     .title("MyRepair & MyMobile Alstertal Einkaufszentrum 1.OG")
             )
             googleMap.uiSettings.isZoomControlsEnabled = true
@@ -82,6 +84,7 @@ class WerkstattFragment : Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(p0: GoogleMap) {
+
         TODO("Not yet implemented")
     }
 }

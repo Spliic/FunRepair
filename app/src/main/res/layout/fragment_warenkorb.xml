@@ -85,18 +85,28 @@
             app:layout_constraintEnd_toStartOf="@+id/tv_zahlen"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
             android:layout_width="130dp"
             android:layout_height="30dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="28dp"
+            android:text="Gesamtpreis:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_price_all"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="28dp"
             android:text="Preis: 0€"
             android:textSize="20sp"
-
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button"
-            app:layout_constraintHorizontal_bias="0.373"
+            app:layout_constraintHorizontal_bias="0.979"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
