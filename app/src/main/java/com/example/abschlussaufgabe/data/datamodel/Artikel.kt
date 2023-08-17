@@ -15,6 +15,5 @@ data class Artikel(
     var anleitungPdf: String,
     var kategorie: String,
     var unterkategorie: String,
-    var istImWarenkorb: Boolean = false,
-    var warenkorbMenge: Int = 1
+    var warenkorbMenge: Int = 0
 )

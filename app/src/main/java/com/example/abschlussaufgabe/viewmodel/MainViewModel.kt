@@ -23,6 +23,9 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
 
 
+    fun initPrices(price: Double){
+        _allPrices.value = price
+    }
 
 
     fun updatePrices(price: Double){

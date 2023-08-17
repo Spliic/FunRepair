@@ -45,15 +45,18 @@ class WarenkorbFragment : Fragment() {
 
 
 
-        val filteredSortiment = viewModel.completeSortimentList.filter {it.istImWarenkorb == true}
+        val filteredSortiment = viewModel.completeSortimentList.filter {it.warenkorbMenge > 0}
         binding.rvSortiment.adapter = WarenkorbAdapter(filteredSortiment,viewModel)
 
         var sum = 0.0
 
+
         for (filter in filteredSortiment){
-            sum += filter.preis
+            for (i in 1..filter.warenkorbMenge){
+                sum += filter.preis
+            }
         }
-        viewModel.updatePrices(sum)
+        viewModel.initPrices(sum)
         viewModel.allPrices.observe(viewLifecycleOwner){
             binding.tvPriceAll.setText(String.format("%.2f", it) + "€")
         }

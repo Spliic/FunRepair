@@ -39,12 +39,15 @@ class WarenkorbAdapter(
         holder.binding.ivItem.setImageResource(warenkorb.bild)
         holder.binding.tvProductname.setText(warenkorb.artikelBezeichnung)
         holder.binding.tvPrice.setText(warenkorb.preis.toString() + "€")
-
+        holder.binding.tvMenge.setText(warenkorb.warenkorbMenge.toString())
         holder.binding.ivPluscircle.setOnClickListener {
             viewmodel.updatePrices(warenkorb.preis)
             var menge: Int = holder.binding.tvMenge.text.toString().toInt()
             menge++
             holder.binding.tvMenge.setText((menge.toString()))
+            val artikel = warenkorb
+            artikel.warenkorbMenge++
+            viewmodel.updateArtikel(artikel)
         }
 
         holder.binding.ivMinuscircle.setOnClickListener {
@@ -52,6 +55,9 @@ class WarenkorbAdapter(
             var reduzieren: Int = holder.binding.tvMenge.text.toString().toInt()
             reduzieren--
             holder.binding.tvMenge.setText(reduzieren.toString())
+            val artikel = warenkorb
+            artikel.warenkorbMenge--
+            viewmodel.updateArtikel(artikel)
         }
 
         holder.binding.ivTrash.setOnClickListener {
