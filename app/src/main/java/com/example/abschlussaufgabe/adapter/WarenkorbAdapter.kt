@@ -1,5 +1,6 @@
 package com.example.abschlussaufgabe.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +10,7 @@ import com.example.abschlussaufgabe.databinding.WarenkorbListItemBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
 class WarenkorbAdapter(
-    private val datasource: List<Artikel>,
+    private val datasource: MutableList<Artikel>,
     private val viewmodel: MainViewModel
 ): RecyclerView.Adapter<WarenkorbAdapter.ItemViewHolder>() {
 
@@ -61,16 +62,13 @@ class WarenkorbAdapter(
         }
 
         holder.binding.ivTrash.setOnClickListener {
-
+            viewmodel.updatePrices(- warenkorb.preis * warenkorb.warenkorbMenge)
+            val artikel = warenkorb
+            artikel.warenkorbMenge = 0
+            viewmodel.updateArtikel(artikel)
+            datasource.removeAt(position)
+            notifyItemRemoved(position)
         }
-
-
-
-
-
-    }
-
-    fun increaseNumber(){
 
     }
 

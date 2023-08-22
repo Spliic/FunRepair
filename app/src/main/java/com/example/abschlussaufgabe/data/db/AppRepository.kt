@@ -20,6 +20,9 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
         val currentWetter: LiveData<CurrentWeather>
             get() = _currentWetter
 
+
+
+
     suspend fun getWetter(){
         try {
             var test = wetterApi.retrofitService.getWetter()
@@ -92,11 +95,12 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
         _ersatzteilList.value = _ersatzteilList.value?.plus(ersatzteile) ?:ersatzteile
         _anleitungList.value = _anleitungList.value?.plus(anleitungen)?:anleitungen
     }
-
-
+    
     fun editArtikel(artikel: Artikel){
         database.artikelDao.updateArtikel(artikel)
     }
+
+
 
 
     /**

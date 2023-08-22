@@ -22,6 +22,7 @@ interface ArtikelDao {
     fun deleteAll()
 
 
+
     @Query("SELECT * FROM artikel_table")
     fun getAll():List<Artikel>
 

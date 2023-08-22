@@ -15,31 +15,30 @@ import com.example.abschlussaufgabe.data.db.getDatabase
 import kotlinx.coroutines.launch
 
 
-class MainViewModel(application: Application): AndroidViewModel(application) {
+class MainViewModel(application: Application) : AndroidViewModel(application) {
+
+
+    private val repository = AppRepository(getDatabase(application), WetterApi)
 
 
 
-    private val repository = AppRepository(getDatabase(application),WetterApi)
-
-
-
-    fun initPrices(price: Double){
+    fun initPrices(price: Double) {
         _allPrices.value = price
     }
 
 
-    fun updatePrices(price: Double){
+    fun updatePrices(price: Double) {
         _allPrices.value = _allPrices.value!! + price
     }
 
     private val _allPrices = MutableLiveData(0.0)
-        val allPrices: LiveData<Double>
-            get() = _allPrices
+    val allPrices: LiveData<Double>
+        get() = _allPrices
 
 
     private val _currentWetter = MutableLiveData<CurrentWeather>()
-        val currentWetter: LiveData<CurrentWeather>
-            get() = _currentWetter
+    val currentWetter: LiveData<CurrentWeather>
+        get() = _currentWetter
 
     /**
      * Setze die Livedata für den titel
@@ -48,7 +47,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     val sortimentTitel: LiveData<String>
         get() = _sortimentTitel
 
-    fun setSortimentTitle(titel: String){
+    fun setSortimentTitle(titel: String) {
         _sortimentTitel.value = titel
     }
 
@@ -57,7 +56,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
      * Setze LiveData für ErsatzteilListe
      */
     private val _ersatzteilList = MutableLiveData<List<Artikel>>()
-    val ersatzteilList : LiveData<List<Artikel>>
+    val ersatzteilList: LiveData<List<Artikel>>
         get() = _ersatzteilList
 
 
@@ -79,10 +78,10 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     /**
      * Hier wird eine LiveData-Liste von Artikel-Objekten verwaltet:
-        _sortimentList ist eine private LiveData-Liste.
-        sortimentList ist eine öffentliche LiveData-Liste, die auf _sortimentList verweist.
-        completeSortimentList kommt direkt vom Repository.
-        setSortimentList aktualisiert _sortimentList mit einer neuen Liste.
+    _sortimentList ist eine private LiveData-Liste.
+    sortimentList ist eine öffentliche LiveData-Liste, die auf _sortimentList verweist.
+    completeSortimentList kommt direkt vom Repository.
+    setSortimentList aktualisiert _sortimentList mit einer neuen Liste.
      */
 
     private val _sortimentList = MutableLiveData<List<Artikel>>()
@@ -91,12 +90,12 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     val completeSortimentList = repository.completeSortimentList
 
-    fun setSortimentList(liste: List<Artikel>){
+    fun setSortimentList(liste: List<Artikel>) {
         _sortimentList.value = liste
     }
 
 
-    fun updateArtikel(artikel: Artikel){
+    fun updateArtikel(artikel: Artikel) {
         viewModelScope.launch {
             repository.editArtikel(artikel)
         }
@@ -133,25 +132,22 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     /**
      * Set live data value for _hideToolbar
      */
-    fun hideToolbar(hide: Boolean){
+    fun hideToolbar(hide: Boolean) {
         _hideToolbar.value = hide
     }
 
     /**
      * Set Live data value for _hideNavigation
      */
-    fun hideNavigation(hide:Boolean){
+    fun hideNavigation(hide: Boolean) {
         _hideNavigation.value = hide
     }
 
-    fun getWetter(){
+    fun getWetter() {
         viewModelScope.launch {
             repository.getWetter()
             _currentWetter.postValue(repository.currentWetter.value)
         }
     }
-
-
-
 
 }

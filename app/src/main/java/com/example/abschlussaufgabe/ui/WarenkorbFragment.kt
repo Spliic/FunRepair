@@ -46,7 +46,7 @@ class WarenkorbFragment : Fragment() {
 
 
         val filteredSortiment = viewModel.completeSortimentList.filter {it.warenkorbMenge > 0}
-        binding.rvSortiment.adapter = WarenkorbAdapter(filteredSortiment,viewModel)
+        binding.rvSortiment.adapter = WarenkorbAdapter(filteredSortiment.toMutableList(),viewModel)
 
         var sum = 0.0
 
@@ -60,6 +60,7 @@ class WarenkorbFragment : Fragment() {
         viewModel.allPrices.observe(viewLifecycleOwner){
             binding.tvPriceAll.setText(String.format("%.2f", it) + "€")
         }
+
 
 
     }
