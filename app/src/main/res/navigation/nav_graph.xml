@@ -94,7 +94,11 @@
     <fragment
         android:id="@+id/warenkorbFragment"
         android:name="com.example.abschlussaufgabe.ui.WarenkorbFragment"
-        android:label="WarenkorbFragment" />
+        android:label="WarenkorbFragment" >
+        <action
+            android:id="@+id/action_warenkorbFragment_to_adressenFragment"
+            app:destination="@id/adressenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/werkstattFragment"
         android:name="com.example.abschlussaufgabe.ui.WerkstattFragment"
@@ -143,4 +147,12 @@
         android:name="com.example.abschlussaufgabe.ui.WetterFragment"
         android:label="fragment_wetter"
         tools:layout="@layout/fragment_wetter" />
+    <fragment
+        android:id="@+id/adressenFragment"
+        android:name="com.example.abschlussaufgabe.ui.AdressenFragment"
+        android:label="AdressenFragment" >
+        <action
+            android:id="@+id/action_adressenFragment_to_warenkorbFragment"
+            app:destination="@id/warenkorbFragment" />
+    </fragment>
 </navigation>

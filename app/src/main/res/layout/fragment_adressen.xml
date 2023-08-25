@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appcolor"
+        tools:context=".ui.WarenkorbFragment">
+
+
+        <TextView
+            android:id="@+id/tv_checkoutInAdress"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colourButton"
+            android:text="Checkout"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_adresse"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Adresse"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/iv_clouddone2"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintStart_toEndOf="@+id/iv_clouddone1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_zahlenInAdress"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:text="Zahlen"
+            android:textColor="@color/colourButton"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_clouddone1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/baseline_cloud_done_24"
+            app:layout_constraintStart_toEndOf="@+id/tv_checkoutInAdress"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_clouddone2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/baseline_cloud_done_24"
+            app:layout_constraintEnd_toStartOf="@+id/tv_zahlenInAdress"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/buttonBreak"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="28dp"
+            android:text="Abbrechen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="28dp"
+            android:text="Weiter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/tv_adresse"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toEndOf="@+id/iv_clouddone1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/iv_clouddone1"
+            app:layout_constraintStart_toEndOf="@+id/tv_checkoutInAdress"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/tv_zahlenInAdress"
+            app:layout_constraintStart_toEndOf="@+id/iv_clouddone2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colourButton"
+            app:layout_constraintEnd_toStartOf="@+id/iv_clouddone2"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toEndOf="@+id/tv_adresse"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/kontaktdetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="252dp"
+            android:text="Kontaktdetails"
+            app:layout_constraintBottom_toTopOf="@+id/textInput_name"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_tele"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="244dp"
+            android:text="Telefonnummer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_name" />
+
+        <TextView
+            android:id="@+id/tv_straße"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="300dp"
+            android:text="Straße"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text" />
+
+        <TextView
+            android:id="@+id/tv_hausnummer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="Hausnummer"
+            app:layout_constraintEnd_toEndOf="@+id/textInput_nr"
+            app:layout_constraintHorizontal_bias="0.859"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_straße" />
+
+        <TextView
+            android:id="@+id/tv_plz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="Postleitzahl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.012"
+            app:layout_constraintStart_toStartOf="@+id/textInput_plz"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_straße" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_adresse">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Vollständiger Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tele">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Telefonnummer" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_straße"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_straße">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Straße" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_nr"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hausnummer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nr" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_plz"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_plz">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Plz" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

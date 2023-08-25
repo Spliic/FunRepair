@@ -105,12 +105,12 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/buttonBuy"
             app:layout_constraintHorizontal_bias="0.979"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonBuy"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginEnd="28dp"
