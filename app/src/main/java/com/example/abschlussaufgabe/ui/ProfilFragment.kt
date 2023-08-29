@@ -47,6 +47,9 @@ class ProfilFragment : Fragment() {
             findNavController().navigate(ProfilFragmentDirections.actionProfilFragmentToLoginFragment())
         }
 
+        /**
+         * Hier wird die aktuelle Temperatur angezeigt über die API
+         */
         binding.btnWetter.setOnClickListener {
             viewModel.currentWetter.observe(viewLifecycleOwner) {
                 binding.wetterApixml.text = it.current.temperature.toString() + "° C"

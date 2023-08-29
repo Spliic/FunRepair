@@ -48,6 +48,10 @@ class WerkstattFragment : Fragment(), OnMapReadyCallback {
     ): View? {
         binding = FragmentWerkstattBinding.inflate(inflater,container,false)
 
+
+        /**
+         * Die Google MapView wird hier aufgerufen und setzt einen Marker mit Festen Längen und BreitenGrades
+         */
         var latlng = LatLng (53.65432, 10.09070)
         var zoomFromMap = 16f
         binding.map.onCreate(savedInstanceState)

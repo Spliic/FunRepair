@@ -1,10 +1,10 @@
-package com.example.abschlussaufgabe.data.db
+package com.example.abschlussaufgabe.data.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.abschlussaufgabe.data.datamodel.Bewertung
+import com.example.abschlussaufgabe.data.datamodel.db.Bewertung
 
 @Dao
 interface BewertungDao {

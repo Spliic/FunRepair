@@ -60,11 +60,6 @@ class LoginFragment : Fragment() {
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -86,6 +81,9 @@ class LoginFragment : Fragment() {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment2())
         }
     }
+
+
+
 
         /**
          *  Hier überprüfen wir ob die Email und das Passwort felder Leer sind

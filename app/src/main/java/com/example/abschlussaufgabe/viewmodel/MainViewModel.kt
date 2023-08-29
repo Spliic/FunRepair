@@ -1,17 +1,15 @@
 package com.example.abschlussaufgabe.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.abschlussaufgabe.data.apiServices.WetterApi
-import com.example.abschlussaufgabe.data.datamodel.Artikel
-import com.example.abschlussaufgabe.data.datamodel.CurrentWeather
-import com.example.abschlussaufgabe.data.db.AppRepository
-import com.example.abschlussaufgabe.data.db.SortimentDatabase
-import com.example.abschlussaufgabe.data.db.getDatabase
+import com.example.abschlussaufgabe.data.datamodel.db.Artikel
+import com.example.abschlussaufgabe.data.datamodel.api.CurrentWeather
+import com.example.abschlussaufgabe.data.database.repository.AppRepository
+import com.example.abschlussaufgabe.data.database.getDatabase
 import kotlinx.coroutines.launch
 
 
@@ -92,9 +90,16 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         get() = _hideNavigation
 
 
+    /**
+     * Diese Funktion gibt uns die gesamte SortimentListe
+     */
     fun setSortimentList(liste: List<Artikel>) {
         _sortimentList.value = liste
     }
+
+    /**
+     * Diese Funktion updated den Artikel
+     */
     fun updateArtikel(artikel: Artikel) {
         viewModelScope.launch {
             repository.editArtikel(artikel)
@@ -115,6 +120,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _hideNavigation.value = hide
     }
 
+
+    /**
+     * diese Funktion gibt und das Aktuelle Wetter der API
+     */
     fun getWetter() {
         viewModelScope.launch {
             repository.getWetter()
@@ -122,14 +131,23 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    /**
+     * Diese Funktion updatet den Aktuellen Titel im Sortiment
+     */
     fun setSortimentTitle(titel: String) {
         _sortimentTitel.value = titel
     }
 
+    /**
+     * Diese Funktion Updatet den gesamtpreis im Warenkorb
+     */
     fun updatePrices(price: Double) {
         _allPrices.value = _allPrices.value!! + price
     }
 
+    /**
+     * Diese Funktion initialisiert uns den Gesamten Preis
+     */
     fun initPrices(price: Double) {
         _allPrices.value = price
     }

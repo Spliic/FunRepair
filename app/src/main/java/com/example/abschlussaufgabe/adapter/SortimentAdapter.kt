@@ -3,10 +3,9 @@ package com.example.abschlussaufgabe.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.abschlussaufgabe.data.datamodel.Artikel
+import com.example.abschlussaufgabe.data.datamodel.db.Artikel
 import com.example.abschlussaufgabe.databinding.SortimentItemListBinding
 import com.example.abschlussaufgabe.ui.SortimentFragmentDirections
 

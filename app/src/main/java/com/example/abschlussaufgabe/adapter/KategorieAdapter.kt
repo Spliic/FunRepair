@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.abschlussaufgabe.data.datamodel.Artikel
+import com.example.abschlussaufgabe.data.datamodel.db.Artikel
 import com.example.abschlussaufgabe.databinding.WerkzeugItemListBinding
 import com.example.abschlussaufgabe.ui.HomeFragmentDirections
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
@@ -39,10 +39,8 @@ class KategorieAdapter(
 
 
         holder.binding.mcvItem.setOnClickListener {
-
             viewModel.setSortimentList(getCategoryList(kategorie))
             holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSortimentFragment(kategorie.artikelBezeichnung))
-
         }
     }
 

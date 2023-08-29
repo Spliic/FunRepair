@@ -1,4 +1,4 @@
-package com.example.abschlussaufgabe.data.datamodel
+package com.example.abschlussaufgabe.data.datamodel.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

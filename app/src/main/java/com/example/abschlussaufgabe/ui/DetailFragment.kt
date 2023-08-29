@@ -66,16 +66,26 @@ class DetailFragment : Fragment() {
         binding.tvDescription.setText(artikelBeschreibung)
         binding.tvProductname.setText(artikelBezeichnung)
 
+
+        /**
+         *  Der Klick Button um das Produkt in den Warenkorb zu legen.
+         */
         binding.btnWarenkorb.setOnClickListener {
-            val warenkorbFilter = viewModel.completeSortimentList.filter {it.bild == bild}
-            val artikel = warenkorbFilter.first()
-            artikel.warenkorbMenge++
-            Toast.makeText(context, "Produkt wurde dem Warenkorb hinzugefügt", Toast.LENGTH_SHORT).show()
-            viewModel.updateArtikel(artikel)
+            shoppingCartFilter()
         }
+    }
 
 
-
+    /**
+     * Diese Funktion Filtert den Inhalt des Warenkorbs, was der Kunde ausgewählt hat.
+     */
+    private fun shoppingCartFilter() {
+        val warenkorbFilter = viewModel.completeSortimentList.filter { it.bild == bild }
+        val artikel = warenkorbFilter.first()
+        artikel.warenkorbMenge++
+        Toast.makeText(context, "Produkt wurde dem Warenkorb hinzugefügt", Toast.LENGTH_SHORT)
+            .show()
+        viewModel.updateArtikel(artikel)
     }
 
 }

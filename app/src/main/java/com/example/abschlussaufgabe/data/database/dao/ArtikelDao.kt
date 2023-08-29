@@ -1,11 +1,11 @@
-package com.example.abschlussaufgabe.data.db
+package com.example.abschlussaufgabe.data.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.abschlussaufgabe.data.datamodel.Artikel
+import com.example.abschlussaufgabe.data.datamodel.db.Artikel
 
 @Dao
 interface ArtikelDao {
@@ -13,7 +13,7 @@ interface ArtikelDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(artikel:Artikel)
+    fun insert(artikel: Artikel)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(artikel:List<Artikel>)

@@ -1,12 +1,13 @@
-package com.example.abschlussaufgabe.data.db
+package com.example.abschlussaufgabe.data.database.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.abschlussaufgabe.R
 import com.example.abschlussaufgabe.data.apiServices.WetterApi
-import com.example.abschlussaufgabe.data.datamodel.Artikel
-import com.example.abschlussaufgabe.data.datamodel.CurrentWeather
+import com.example.abschlussaufgabe.data.database.SortimentDatabase
+import com.example.abschlussaufgabe.data.datamodel.db.Artikel
+import com.example.abschlussaufgabe.data.datamodel.api.CurrentWeather
 import java.lang.Exception
 
 

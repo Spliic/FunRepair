@@ -7,13 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
-import com.example.abschlussaufgabe.adapter.SortimentAdapter
 import com.example.abschlussaufgabe.adapter.WarenkorbAdapter
-import com.example.abschlussaufgabe.data.datamodel.Artikel
-import com.example.abschlussaufgabe.databinding.FragmentSucheBinding
 import com.example.abschlussaufgabe.databinding.FragmentWarenkorbBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
@@ -61,6 +57,7 @@ class WarenkorbFragment : Fragment() {
         viewModel.allPrices.observe(viewLifecycleOwner){
             binding.tvPriceAll.setText(String.format("%.2f", it) + "€")
         }
+
 
 
         binding.buttonBuy.setOnClickListener {

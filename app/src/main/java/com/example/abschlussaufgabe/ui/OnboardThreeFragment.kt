@@ -26,6 +26,9 @@ class OnboardThreeFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_onboard_three,container,false)
 
+        /**
+         * Der Looper um die Onboard Screens anzuzeigen und nach 2 Sekunden zu wechseln
+         */
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(OnboardThreeFragmentDirections.actionOnboardThreeFragmentToLoginFragment())
         },2000)

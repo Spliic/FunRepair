@@ -51,20 +51,17 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-
-
+        /**
+         * Hier werden die Recyclerviews nach Kategorie Sortiert / Jenachdem wo man drauf klickt.
+         */
         viewModel.ersatzteilList.observe(viewLifecycleOwner){ersatzteilList ->
             binding.rvNewitem.adapter = KategorieAdapter(ersatzteilList,viewModel)
-
         }
 
 
         binding.cvErsatzteile.setOnClickListener {
             binding.rvNewitem.adapter = KategorieAdapter(viewModel.ersatzteilList.value!!,viewModel)
             viewModel.setSortimentTitle("Ersatzteile")
-
-
         }
 
         binding.cvWerkzeug.setOnClickListener {
