@@ -19,10 +19,6 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
     private val _currentWetter = MutableLiveData<CurrentWeather>()
         val currentWetter: LiveData<CurrentWeather>
             get() = _currentWetter
-
-
-
-
     suspend fun getWetter(){
         try {
             var test = wetterApi.retrofitService.getWetter()
@@ -69,7 +65,6 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
      * Im Konstruktor werden alle vorhandenen Daten in der Datenbanktabelle gelöscht und Beispiel-Daten eingefügt.
      */
     init {
-        //database.artikelDao.deleteAll()
         exampleData()
     }
 
@@ -99,8 +94,6 @@ class AppRepository(private val database: SortimentDatabase, private val wetterA
     fun editArtikel(artikel: Artikel){
         database.artikelDao.updateArtikel(artikel)
     }
-
-
 
 
     /**

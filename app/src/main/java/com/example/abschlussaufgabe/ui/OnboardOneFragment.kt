@@ -25,20 +25,7 @@ class OnboardOneFragment : Fragment() {
 
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(OnboardOneFragmentDirections.actionOnboardOneFragmentToOnboardTwoFragment())
-        },3000)
-
-
-
-
-
+        },2000)
         return binding.root
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-
-
 }

@@ -28,13 +28,8 @@ class OnboardTwoFragment : Fragment() {
 
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(OnboardTwoFragmentDirections.actionOnboardTwoFragmentToOnboardThreeFragment())
-        },3000)
-
-
-
+        },2000)
         return binding.root
     }
-
-
 }
 

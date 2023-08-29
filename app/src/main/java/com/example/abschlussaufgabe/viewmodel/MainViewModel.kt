@@ -21,24 +21,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = AppRepository(getDatabase(application), WetterApi)
 
 
-
-    fun initPrices(price: Double) {
-        _allPrices.value = price
-    }
-
-
-    fun updatePrices(price: Double) {
-        _allPrices.value = _allPrices.value!! + price
-    }
-
+    /**
+     * Setze die Livedata für den Gesamtpreis
+     */
     private val _allPrices = MutableLiveData(0.0)
     val allPrices: LiveData<Double>
         get() = _allPrices
 
-
+    /**
+     * Setze die Livedata für das Wetter
+     */
     private val _currentWetter = MutableLiveData<CurrentWeather>()
     val currentWetter: LiveData<CurrentWeather>
         get() = _currentWetter
+
 
     /**
      * Setze die Livedata für den titel
@@ -47,18 +43,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val sortimentTitel: LiveData<String>
         get() = _sortimentTitel
 
-    fun setSortimentTitle(titel: String) {
-        _sortimentTitel.value = titel
-    }
-
-
     /**
      * Setze LiveData für ErsatzteilListe
      */
     private val _ersatzteilList = MutableLiveData<List<Artikel>>()
     val ersatzteilList: LiveData<List<Artikel>>
         get() = _ersatzteilList
-
 
     /**
      * Setze LiveData für WerkzeugListe
@@ -67,14 +57,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val werkzeugList: LiveData<List<Artikel>>
         get() = _werkzeugList
 
-
     /**
      * Setze LiveData für AnleitungsListe
      */
     private val _anleitungList = MutableLiveData<List<Artikel>>()
     val anleitungList: LiveData<List<Artikel>>
         get() = _anleitungList
-
 
     /**
      * Hier wird eine LiveData-Liste von Artikel-Objekten verwaltet:
@@ -83,36 +71,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     completeSortimentList kommt direkt vom Repository.
     setSortimentList aktualisiert _sortimentList mit einer neuen Liste.
      */
-
     private val _sortimentList = MutableLiveData<List<Artikel>>()
     val sortimentList: LiveData<List<Artikel>>
         get() = _sortimentList
-
     val completeSortimentList = repository.completeSortimentList
 
-    fun setSortimentList(liste: List<Artikel>) {
-        _sortimentList.value = liste
-    }
-
-
-    fun updateArtikel(artikel: Artikel) {
-        viewModelScope.launch {
-            repository.editArtikel(artikel)
-        }
-    }
-
-
-    /**
-     * Daten aus Repository werden in LiveData-Variablen initialisiert.
-     */
-    init {
-        getWetter()
-        repository.loadData()
-        _anleitungList.value = repository.anleitungList.value
-        _werkzeugList.value = repository.werkzeugList.value
-        _ersatzteilList.value = repository.ersatzteilList.value
-        _currentWetter.value = repository.currentWetter.value
-    }
 
     /**
      * Live Data to hide toolbar
@@ -128,6 +91,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val hideNavigation: LiveData<Boolean>
         get() = _hideNavigation
 
+
+    fun setSortimentList(liste: List<Artikel>) {
+        _sortimentList.value = liste
+    }
+    fun updateArtikel(artikel: Artikel) {
+        viewModelScope.launch {
+            repository.editArtikel(artikel)
+        }
+    }
 
     /**
      * Set live data value for _hideToolbar
@@ -150,4 +122,27 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun setSortimentTitle(titel: String) {
+        _sortimentTitel.value = titel
+    }
+
+    fun updatePrices(price: Double) {
+        _allPrices.value = _allPrices.value!! + price
+    }
+
+    fun initPrices(price: Double) {
+        _allPrices.value = price
+    }
+
+    /**
+     * Daten aus Repository werden in LiveData-Variablen initialisiert.
+     */
+    init {
+        getWetter()
+        repository.loadData()
+        _anleitungList.value = repository.anleitungList.value
+        _werkzeugList.value = repository.werkzeugList.value
+        _ersatzteilList.value = repository.ersatzteilList.value
+        _currentWetter.value = repository.currentWetter.value
+    }
 }

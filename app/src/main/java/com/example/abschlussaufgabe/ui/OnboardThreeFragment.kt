@@ -28,12 +28,7 @@ class OnboardThreeFragment : Fragment() {
 
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(OnboardThreeFragmentDirections.actionOnboardThreeFragmentToLoginFragment())
-        },3000)
-
-
-
+        },2000)
         return binding.root
     }
-
-
 }
