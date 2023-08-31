@@ -107,4 +107,5 @@ class WarenkorbAdapter(
         notifyItemRemoved(position)
     }
 
+
 }

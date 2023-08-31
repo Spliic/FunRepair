@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_homeFragment_to_profilFragment"
             app:destination="@id/profilFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_warenkorbFragment"
+            app:destination="@id/warenkorbFragment" />
     </fragment>
     <fragment
         android:id="@+id/sortimentFragment"
@@ -161,5 +164,9 @@
     <fragment
         android:id="@+id/zahlenFragment"
         android:name="com.example.abschlussaufgabe.ui.ZahlenFragment"
-        android:label="ZahlenFragment" />
+        android:label="ZahlenFragment" >
+        <action
+            android:id="@+id/action_zahlenFragment_to_warenkorbFragment"
+            app:destination="@id/warenkorbFragment" />
+    </fragment>
 </navigation>

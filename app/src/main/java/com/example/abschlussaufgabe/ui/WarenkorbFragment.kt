@@ -64,10 +64,6 @@ class WarenkorbFragment : Fragment() {
             findNavController().navigate(WarenkorbFragmentDirections.actionWarenkorbFragmentToAdressenFragment())
         }
 
-
-
-
-
     }
 
 
