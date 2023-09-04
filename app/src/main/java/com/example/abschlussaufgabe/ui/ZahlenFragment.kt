@@ -45,9 +45,53 @@ class ZahlenFragment : Fragment(R.layout.fragment_zahlen) {
 
 
         binding.buttonZahlen.setOnClickListener {
-            Toast.makeText(context,"Zahlung erfolgreich! Vielen dank für Ihren Einkauf",Toast.LENGTH_LONG).show()
-            findNavController().navigate(ZahlenFragmentDirections.actionZahlenFragmentToWarenkorbFragment())
+            if (validateInputs()) {
+                Toast.makeText(context,"Zahlung erfolgreich! Vielen dank für Ihren Einkauf",Toast.LENGTH_LONG).show()
+                for (i in viewModel.completeSortimentList){
+                    if (i.warenkorbMenge > 0 ) {
+                        i.warenkorbMenge = 0
+                    }
+                }
+                findNavController().navigate(ZahlenFragmentDirections.actionZahlenFragmentToHomeFragment())
+            }
         }
     }
 
+    private fun validateInputs(): Boolean {
+        val cardName = binding.inputCardname.editText?.text.toString()
+        val cardNumber = binding.textInputLayout.editText?.text.toString()
+        val expirationDate = binding.textInputDatum.editText?.text.toString()
+        val cvv = binding.textInputCvv.editText?.text.toString()
+
+        if (cardName.isEmpty()) {
+            binding.inputCardname.error = "Karteninhaber darf nicht leer sein"
+            return false
+        } else {
+            binding.inputCardname.error = null
+        }
+
+        if (cardNumber.isEmpty()) {
+            binding.textInputLayout.error = "Kartennummer darf nicht leer sein"
+            return false
+        }  else {
+            binding.textInputLayout.error = null
+        }
+
+        if (expirationDate.isEmpty()){
+            binding.textInputDatum.error = "Ablaufdatum darf nicht leer sein"
+            return false
+        } else {
+            binding.textInputDatum.error = null
+        }
+
+        if (cvv.isEmpty()) {
+            binding.textInputCvv.error = "CVV darf nicht leer sein"
+            return false
+        } else {
+            binding.textInputCvv.error = null
+        }
+
+        return true
+
+    }
 }
